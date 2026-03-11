@@ -218,9 +218,12 @@ COUNTRY_WINTER_LOADING = {
     "UA": 1.25,
 }
 
-# ELF sigmoid parameters (calibrated so that 10 drought days → ELF ≈ 0.23 → LR ≈ 8.4%)
-ELF_K = 0.35   # steepness
-ELF_X0 = 10.0  # inflection point (days)
+# ELF sigmoid parameters
+# Calibration: ELF(10 days) * CF * 100 = 8.4%  →  ELF(10) = 0.2340
+# Solved: X0 = 10 + ln(1/0.234 - 1) / 0.35 = 13.39
+# Verification: ELF(0)=0.009→LR=0.33%, ELF(10)=0.234→LR=8.40%, ELF(20)=0.910→LR=32.7%
+ELF_K = 0.35    # steepness
+ELF_X0 = 13.39  # inflection point (days) — recalibrated so ELF(10 days)→8.4% LR
 
 
 def elf_from_drought(i_drought):
@@ -267,7 +270,7 @@ def process_region(region, year, ds_autumn, ds_winter):
         swvl1_daily = compute_daily_mean(swvl1_h)
         time_dim = "valid_time" if "valid_time" in swvl1_daily.dims else "time"
 
-        # Window: Aug 20 – Oct 20
+        # Drought window: Aug 20 – Oct 20 (covers sowing and emergence period)
         t = swvl1_daily[time_dim].values
         sowing_start = np.datetime64(f"{year}-08-20")
         sowing_end   = np.datetime64(f"{year}-10-20")
@@ -280,15 +283,22 @@ def process_region(region, year, ds_autumn, ds_winter):
             i_drought = int(np.sum(swvl1_window < DROUGHT_THRESH))
             elf_raw = elf_from_drought(i_drought)
 
-            # Soil crust modifier
+            # Soil crust modifier: heavy rain 5–20 days after sowing_doy on high-clay soil
+            # Use actual sowing_doy to anchor the post-sowing window
+            import datetime
+            sowing_date = datetime.date(year, 1, 1) + datetime.timedelta(days=sowing_doy - 1)
+            crust_start = np.datetime64(sowing_date + datetime.timedelta(days=5))
+            crust_end   = np.datetime64(sowing_date + datetime.timedelta(days=20))
             tp_h = extract_centroid(ds_autumn, lat, lon, "tp")
             tp_daily = compute_daily_mean(tp_h) * 1000  # m → mm
-            tp_window = tp_daily.values[mask]
-            # Find any 2-day sum > 30mm in days 5-20 of sowing window
+            tp_t = tp_daily[time_dim].values
+            crust_mask = (tp_t >= crust_start) & (tp_t <= crust_end)
+            tp_crust = tp_daily.values[crust_mask]
+            # Any 2-day sum > 30mm on clay soil → surface crust risk
             crust_flag = 0
-            if clay_pct > 30 and len(tp_window) >= 20:
-                for i in range(5, min(20, len(tp_window) - 1)):
-                    if tp_window[i] + tp_window[i+1] > 30:
+            if clay_pct > 30 and len(tp_crust) >= 2:
+                for i in range(len(tp_crust) - 1):
+                    if tp_crust[i] + tp_crust[i + 1] > 30:
                         crust_flag = 1
                         break
 
@@ -323,7 +333,8 @@ def process_region(region, year, ds_autumn, ds_winter):
             n = min(len(tmin_w), len(sde_w))
             bare_frost = (tmin_w[:n] < FROST_THRESH_K) & (sde_w[:n] < SNOW_THRESH)
             i_frost = int(np.sum(bare_frost))
-            catas = int(np.any(tmin_w < FROST_CATAS_K))
+            # Catastrophic frost: tmin < -18°C AND bare soil (no snow insulation)
+            catas = int(np.any((tmin_w[:n] < FROST_CATAS_K) & (sde_w[:n] < SNOW_THRESH)))
             result["i_frost_days"] = i_frost
             result["frost_catastrophic"] = catas
     except Exception as e:
@@ -336,12 +347,20 @@ def process_region(region, year, ds_autumn, ds_winter):
 
     if not np.isnan(elf):
         lr_std = elf * CF * 100  # percent
+        # Soil crust loading: +1.5% if crust conditions detected (clay>30%, heavy rain post-sowing)
+        # Applied within Standard Package since crust is a non-germination peril
+        crust_load = 1.5 if result.get("crust_flag", 0) == 1 else 0.0
+        lr_std = lr_std + crust_load
+
         # Winter frost component
         i_frost = result.get("i_frost_days", 0)
         catas = result.get("frost_catastrophic", 0)
-        # Linear frost LR: 3 bare-frost-days → ~4.5% national avg; catastrophic → add 5%
+        # Linear frost LR: 30 bare-frost-days → 4.5% national avg; catastrophic (bare-soil -18°C) → add 5%
         lr_winter = (min(i_frost, 30) / 30.0 * 4.5 + catas * 5.0) * winter_load
-        lr_full = lr_std + lr_winter + 1.5 + 0.75 + 0.75 + 2.0  # + spring frost + hail + storm + spring drought (fixed averages)
+        # Full package = standard + winter + fixed market loadings for remaining perils
+        # Spring frost (+1.5%), hail (+0.75%), storm (+0.75%), spring drought (+2.0%)
+        # NOTE: these are market-rate placeholder loadings; not ERA5-modeled
+        lr_full = lr_std + lr_winter + 1.5 + 0.75 + 0.75 + 2.0
         result["lr_standard_pct"] = round(lr_std, 2)
         result["lr_winter_pct"] = round(lr_winter, 2)
         result["lr_full_pct"] = round(lr_full, 2)
