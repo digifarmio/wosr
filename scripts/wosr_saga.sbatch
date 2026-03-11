@@ -62,7 +62,7 @@ for COUNTRY in "${COUNTRIES[@]}"; do
         apptainer exec --containall --cleanenv \
             --bind "$ERA5_DIR/$COUNTRY:/era5_out" \
             --bind "$SCRIPT_DIR:/scripts" \
-            --bind "$HOME/.cdsapirc:/root/.cdsapirc:ro" \
+            --bind "$HOME/.cdsapirc:$HOME/.cdsapirc:ro" \
             --env AWS_DEFAULT_REGION=eu-central-1 \
             --env GDAL_HTTP_TIMEOUT=60 \
             --env GDAL_HTTP_MAX_RETRY=3 \

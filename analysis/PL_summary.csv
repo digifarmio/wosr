@@ -1,0 +1,17 @@
+country,region_id,region_name,risk_zone,n_years,one_bad_year,lr_30yr_pct,lr_5yr_pct,lr_pricing_pct,lr_full_mean_pct,lr_std_max_pct,worst_year,premium_eur_ha
+PL,PL-DS,Lower Silesia,Z3,1,1,50.16,,50.16,12.8,0.33,1995,48.16
+PL,PL-KP,Kuyavian-Pomeranian,Z3,1,1,53.18,,53.18,13.77,6.35,1995,51.05
+PL,PL-LB,Lubusz,Z3,1,1,51.73,,51.73,9.67,3.46,1995,49.66
+PL,PL-LD,Łódź,Z1,1,1,53.18,,53.18,13.77,6.35,1995,51.05
+PL,PL-LU,Lublin,Z2,1,1,50.16,,50.16,8.43,0.33,1995,48.16
+PL,PL-MA,Lesser Poland,Z2,1,1,50.16,,50.16,5.33,0.33,1995,48.16
+PL,PL-MZ,Masovian,Z1,1,1,50.16,,50.16,13.67,0.33,1995,48.16
+PL,PL-OP,Opole,Z2,1,1,50.16,,50.16,12.98,0.33,1995,48.16
+PL,PL-PD,Podlaskie,Z1,1,1,50.16,,50.16,5.5,0.33,1995,48.16
+PL,PL-PK,Subcarpathian,Z2,1,1,50.16,,50.16,12.11,0.33,1995,48.16
+PL,PL-PM,Pomerania,Z3,1,1,54.2,,54.2,14.6,8.39,1995,52.03
+PL,PL-SK,Świętokrzyskie,Z2,1,1,52.36,,52.36,18.06,4.72,1995,50.27
+PL,PL-SL,Silesia,Z3,1,1,50.16,,50.16,12.63,0.33,1995,48.16
+PL,PL-WN,Warmia-Mazury,Z1,1,1,51.73,,51.73,8.81,3.46,1995,49.66
+PL,PL-WP,Greater Poland,Z3,1,1,50.16,,50.16,7.57,0.33,1995,48.16
+PL,PL-ZP,West Pomerania,Z3,1,1,50.16,,50.16,7.4,0.33,1995,48.16
