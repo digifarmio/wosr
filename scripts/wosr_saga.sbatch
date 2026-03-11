@@ -14,6 +14,8 @@
 
 set -uo pipefail
 
+module load awscli/2.17.54-GCCcore-13.2.0
+
 WORK_DIR="/cluster/work/users/digifarm/wosr"
 CONTAINER="/cluster/work/users/digifarm/sure2/containers/sure2-assess-v1.2.sif"
 ERA5_DIR="$WORK_DIR/era5"
