@@ -18,6 +18,7 @@ Usage:
 import argparse
 import os
 import sys
+import zipfile
 from pathlib import Path
 
 import cdsapi
@@ -51,10 +52,12 @@ def fetch_window(client, bbox, variables, years, months, output_path):
         print(f"  Already exists, skipping: {output_path}")
         return
 
-    times = [f"{h:02d}:00" for h in range(24)]
+    # 4× daily to stay within CDS volume limits; sufficient for daily min/mean stats
+    times = ["00:00", "06:00", "12:00", "18:00"]
     days = [f"{d:02d}" for d in range(1, 32)]
 
     print(f"  Fetching {output_path.name} ({bbox}, {years}, months={months})")
+    zip_path = output_path.with_suffix(".zip")
     client.retrieve(
         "reanalysis-era5-land",
         {
@@ -66,8 +69,17 @@ def fetch_window(client, bbox, variables, years, months, output_path):
             "area": bbox,
             "format": "netcdf",
         },
-        str(output_path),
+        str(zip_path),
     )
+    # CDS new API returns a zip archive containing data_0.nc — extract it
+    with zipfile.ZipFile(zip_path, "r") as zf:
+        names = zf.namelist()
+        nc_names = [n for n in names if n.endswith(".nc")]
+        if not nc_names:
+            raise RuntimeError(f"No .nc file found in zip {zip_path}: {names}")
+        zf.extract(nc_names[0], path=output_path.parent)
+        (output_path.parent / nc_names[0]).rename(output_path)
+    zip_path.unlink()
     print(f"  Saved: {output_path} ({output_path.stat().st_size / 1e6:.1f} MB)")
 
 
