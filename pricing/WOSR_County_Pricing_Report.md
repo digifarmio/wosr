@@ -228,28 +228,28 @@
 
 ## Slovakia (SK) — County-Level WOSR Pricing
 
-*Based on 5 years of ERA5-Land historical data (1995–2024 partial)*  
+*Based on 6 years of ERA5-Land historical data (1995–2024 partial)*  
 *Sum insured: €96.0/ha | Sigmoid ELF model, CF=0.3589, Marsh-calibrated*
 
 | County | Zone | LR (Std) % | LR (Full) % | Pure Rate €/ha | Commercial €/ha | 50% Ded. €/ha | Worst Year |
 |--------|------|-----------|------------|--------------|----------------|--------------|-----------|
-| Bratislava | Z2 | 0.33 | 5.33 | €0.32 | €0.42 | €0.15 | 1995 |
-| Banská Bystrica | Z3 | 0.33 | 5.39 | €0.32 | €0.42 | €0.15 | 1995 |
-| Košice | Z1 | 0.33 | 5.39 | €0.32 | €0.42 | €0.15 | 1995 |
-| Nitra | Z1 | 0.33 | 5.33 | €0.32 | €0.42 | €0.15 | 1995 |
-| Prešov | Z2 | 0.33 | 5.44 | €0.32 | €0.42 | €0.15 | 1995 |
-| Trenčín | Z2 | 0.33 | 5.36 | €0.32 | €0.42 | €0.15 | 1995 |
-| Trnava | Z2 | 0.33 | 5.33 | €0.32 | €0.42 | €0.15 | 1995 |
+| Bratislava | Z2 | 2.08 | 7.08 | €2.00 | €2.60 | €1.00 | 2000 |
+| Nitra | Z1 | 0.69 | 5.69 | €0.66 | €0.86 | €0.33 | 2000 |
+| Trnava | Z2 | 0.49 | 5.49 | €0.47 | €0.61 | €0.23 | 2000 |
+| Banská Bystrica | Z3 | 0.33 | 5.38 | €0.32 | €0.42 | €0.15 | 1995 |
+| Košice | Z1 | 0.33 | 5.38 | €0.32 | €0.42 | €0.15 | 1995 |
+| Prešov | Z2 | 0.33 | 5.45 | €0.32 | €0.42 | €0.15 | 1995 |
+| Trenčín | Z2 | 0.33 | 5.35 | €0.32 | €0.42 | €0.15 | 1995 |
 | Žilina | Z3 | 0.33 | 5.33 | €0.32 | €0.42 | €0.15 | 1995 |
 
 ### Zone Averages
 
 | Zone | Counties | Avg LR Std % | Avg Pure Rate €/ha | Avg Commercial €/ha |
 |------|----------|-------------|-------------------|---------------------|
-| Z1 | 2 | 0.33 | €0.32 | €0.42 |
-| Z2 | 4 | 0.33 | €0.32 | €0.42 |
+| Z1 | 2 | 0.51 | €0.49 | €0.64 |
+| Z2 | 4 | 0.81 | €0.78 | €1.01 |
 | Z3 | 2 | 0.33 | €0.32 | €0.42 |
 
-**National average**: LR 0.33% | Pure rate €0.32/ha | Commercial €0.42/ha
+**National average**: LR 0.61% | Pure rate €0.59/ha | Commercial €0.77/ha
 
 ---
