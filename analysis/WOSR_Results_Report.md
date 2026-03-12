@@ -13,7 +13,7 @@
 | PL | 16 | 7 | 2.6% | 9.2% | €2.54 |
 | HU | 19 | 7 | 4.4% | 9.8% | €4.26 |
 | CZ | 14 | 7 | 0.4% | 6.0% | €0.42 |
-| SK | 8 | 6 | 0.6% | 5.6% | €0.59 |
+| SK | 8 | 7 | 0.6% | 5.6% | €0.56 |
 
 ---
 
@@ -290,22 +290,23 @@
 | 1998 | 0.33 | 5.33 | Bratislava | 0.3 |
 | 1999 | 0.33 | 5.33 | Bratislava | 0.3 |
 | 2000 | 2.04 | 7.05 | Bratislava | 10.8 |
+| 2001 | 0.35 | 5.35 | Bratislava | 0.5 |
 
 ### Regional Pricing Summary (30yr weighted)
 
 | Region | Zone | LR Std % | LR Full % | Premium €/ha | Worst Year |
 |--------|------|----------|-----------|--------------|-----------|
-| Bratislava | Z2 | 2.08 | 7.08 | €2.00 | 2000 |
-| Nitra | Z1 | 0.69 | 5.69 | €0.67 | 2000 |
-| Trnava | Z2 | 0.49 | 5.49 | €0.47 | 2000 |
-| Banská Bystrica | Z3 | 0.33 | 5.38 | €0.32 | 1995 |
-| Košice | Z1 | 0.33 | 5.38 | €0.32 | 1995 |
-| Prešov | Z2 | 0.33 | 5.45 | €0.32 | 1995 |
+| Bratislava | Z2 | 1.85 | 6.85 | €1.78 | 2000 |
+| Nitra | Z1 | 0.64 | 5.64 | €0.62 | 2000 |
+| Trnava | Z2 | 0.47 | 5.47 | €0.45 | 2000 |
+| Banská Bystrica | Z3 | 0.33 | 5.37 | €0.32 | 1995 |
+| Košice | Z1 | 0.33 | 5.37 | €0.32 | 1995 |
+| Prešov | Z2 | 0.33 | 5.43 | €0.32 | 1995 |
 | Trenčín | Z2 | 0.33 | 5.35 | €0.32 | 1995 |
 | Žilina | Z3 | 0.33 | 5.33 | €0.32 | 1995 |
 
 ### Zone Averages — SK
 
-- **Z1**: 2 regions — Avg Std LR 0.51%, Avg Premium €0.49/ha
-- **Z2**: 4 regions — Avg Std LR 0.81%, Avg Premium €0.78/ha
+- **Z1**: 2 regions — Avg Std LR 0.48%, Avg Premium €0.47/ha
+- **Z2**: 4 regions — Avg Std LR 0.75%, Avg Premium €0.72/ha
 - **Z3**: 2 regions — Avg Std LR 0.33%, Avg Premium €0.32/ha
