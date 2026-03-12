@@ -9,10 +9,10 @@
 | Country | Regions | Years | Nat. Avg Std LR | Nat. Avg Full LR | Avg Premium €/ha |
 |---------|---------|-------|-----------------|------------------|-----------------|
 | RO | 42 | 15 | 3.2% | 9.3% | €3.11 |
-| MD | 29 | 7 | 0.8% | 5.9% | €0.77 |
-| PL | 16 | 7 | 2.6% | 9.2% | €2.54 |
+| MD | 29 | 8 | 0.8% | 6.3% | €0.72 |
+| PL | 16 | 8 | 3.7% | 10.4% | €3.57 |
 | HU | 19 | 8 | 4.5% | 9.8% | €4.28 |
-| CZ | 14 | 7 | 0.4% | 6.0% | €0.42 |
+| CZ | 14 | 8 | 0.4% | 6.1% | €0.40 |
 | SK | 8 | 7 | 0.6% | 5.6% | €0.56 |
 
 ---
@@ -107,45 +107,46 @@
 | 1999 | 0.43 | 5.46 | Anenii Noi | 1.3 |
 | 2000 | 0.98 | 5.98 | Orhei | 2.5 |
 | 2001 | 1.60 | 6.61 | Anenii Noi | 8.4 |
+| 2002 | 0.39 | 8.78 | Anenii Noi | 1.3 |
 
 ### Regional Pricing Summary (30yr weighted)
 
 | Region | Zone | LR Std % | LR Full % | Premium €/ha | Worst Year |
 |--------|------|----------|-----------|--------------|-----------|
-| Anenii Noi | Z2 | 2.37 | 7.48 | €2.27 | 2001 |
-| Ungheni | Z2 | 1.79 | 6.99 | €1.72 | 2001 |
-| Leova | Z1 | 1.76 | 6.89 | €1.69 | 1998 |
-| Taraclia | Z1 | 1.72 | 6.86 | €1.65 | 1998 |
-| Cahul | Z1 | 1.68 | 6.72 | €1.61 | 1998 |
-| Orhei | Z2 | 1.36 | 6.43 | €1.31 | 2001 |
-| Bălți | Z1 | 1.33 | 6.42 | €1.27 | 2001 |
-| Nisporeni | Z2 | 1.11 | 6.20 | €1.07 | 2001 |
-| Șoldănești | Z2 | 1.05 | 6.12 | €1.01 | 2001 |
-| Cimișlia | Z1 | 0.86 | 6.02 | €0.83 | 1998 |
-| Hîncești | Z2 | 0.68 | 6.59 | €0.65 | 1996 |
-| Ialoveni | Z2 | 0.68 | 5.82 | €0.65 | 1996 |
-| Căușeni | Z1 | 0.68 | 5.84 | €0.65 | 2000 |
-| Ștefan Vodă | Z1 | 0.67 | 5.74 | €0.64 | 1998 |
-| Rezina | Z2 | 0.50 | 5.57 | €0.48 | 2000 |
-| Dubăsari | Z2 | 0.47 | 5.53 | €0.45 | 2000 |
-| Strășeni | Z2 | 0.47 | 5.53 | €0.45 | 2000 |
-| Florești | Z1 | 0.43 | 5.50 | €0.42 | 2001 |
-| Telenești | Z2 | 0.39 | 5.44 | €0.38 | 2000 |
-| Soroca | Z1 | 0.38 | 5.44 | €0.36 | 2001 |
-| Glodeni | Z1 | 0.33 | 5.44 | €0.32 | 1995 |
-| Sîngerei | Z1 | 0.33 | 5.42 | €0.32 | 1995 |
-| Rîșcani | Z1 | 0.33 | 5.44 | €0.32 | 1995 |
-| Criuleni | Z2 | 0.33 | 5.44 | €0.32 | 1995 |
-| Dondușeni | Z1 | 0.33 | 5.44 | €0.32 | 1995 |
-| Ocnița | Z2 | 0.33 | 5.44 | €0.32 | 1995 |
-| Drochia | Z1 | 0.33 | 5.42 | €0.32 | 1995 |
-| Edineț | Z2 | 0.33 | 5.44 | €0.32 | 1995 |
-| Briceni | Z1 | 0.33 | 5.44 | €0.32 | 1995 |
+| Anenii Noi | Z2 | 2.23 | 7.45 | €2.14 | 2001 |
+| Ungheni | Z2 | 1.61 | 7.62 | €1.55 | 2001 |
+| Leova | Z1 | 1.58 | 7.47 | €1.52 | 1998 |
+| Taraclia | Z1 | 1.55 | 7.54 | €1.49 | 1998 |
+| Cahul | Z1 | 1.51 | 6.63 | €1.45 | 1998 |
+| Orhei | Z2 | 1.31 | 6.56 | €1.26 | 2001 |
+| Bălți | Z1 | 1.20 | 6.48 | €1.15 | 2001 |
+| Nisporeni | Z2 | 1.02 | 6.25 | €0.97 | 2001 |
+| Șoldănești | Z2 | 1.00 | 6.24 | €0.96 | 2001 |
+| Cimișlia | Z1 | 0.80 | 6.75 | €0.76 | 1998 |
+| Hîncești | Z2 | 0.64 | 6.55 | €0.61 | 1996 |
+| Ialoveni | Z2 | 0.64 | 5.91 | €0.61 | 1996 |
+| Căușeni | Z1 | 0.64 | 5.89 | €0.61 | 2000 |
+| Ștefan Vodă | Z1 | 0.63 | 5.82 | €0.60 | 1998 |
+| Rezina | Z2 | 0.48 | 5.73 | €0.46 | 2000 |
+| Dubăsari | Z2 | 0.45 | 5.67 | €0.43 | 2000 |
+| Strășeni | Z2 | 0.45 | 5.69 | €0.43 | 2000 |
+| Florești | Z1 | 0.42 | 5.68 | €0.40 | 2001 |
+| Telenești | Z2 | 0.39 | 5.64 | €0.37 | 2000 |
+| Soroca | Z1 | 0.37 | 5.61 | €0.36 | 2001 |
+| Glodeni | Z1 | 0.33 | 6.26 | €0.32 | 1995 |
+| Sîngerei | Z1 | 0.33 | 5.64 | €0.32 | 1995 |
+| Rîșcani | Z1 | 0.33 | 6.32 | €0.32 | 1995 |
+| Criuleni | Z2 | 0.33 | 5.58 | €0.32 | 1995 |
+| Dondușeni | Z1 | 0.33 | 6.28 | €0.32 | 1995 |
+| Ocnița | Z2 | 0.33 | 6.28 | €0.32 | 1995 |
+| Drochia | Z1 | 0.33 | 6.24 | €0.32 | 1995 |
+| Edineț | Z2 | 0.33 | 6.28 | €0.32 | 1995 |
+| Briceni | Z1 | 0.33 | 6.30 | €0.32 | 1995 |
 
 ### Zone Averages — MD
 
-- **Z1**: 15 regions — Avg Std LR 0.77%, Avg Premium €0.74/ha
-- **Z2**: 14 regions — Avg Std LR 0.85%, Avg Premium €0.81/ha
+- **Z1**: 15 regions — Avg Std LR 0.71%, Avg Premium €0.68/ha
+- **Z2**: 14 regions — Avg Std LR 0.80%, Avg Premium €0.77/ha
 
 ---
 
@@ -162,33 +163,34 @@
 | 1999 | 7.65 | 13.06 | Kuyavian-Pomeranian | 35.7 |
 | 2000 | 0.33 | 5.40 | Lower Silesia | 0.3 |
 | 2001 | 0.33 | 5.35 | Lower Silesia | 0.3 |
+| 2002 | 11.23 | 18.94 | Łódź | 35.5 |
 
 ### Regional Pricing Summary (30yr weighted)
 
 | Region | Zone | LR Std % | LR Full % | Premium €/ha | Worst Year |
 |--------|------|----------|-----------|--------------|-----------|
-| Kuyavian-Pomeranian | Z3 | 11.35 | 17.84 | €10.90 | 1997 |
-| Łódź | Z1 | 10.40 | 16.92 | €9.99 | 1999 |
-| Warmia-Mazury | Z1 | 4.84 | 11.06 | €4.65 | 1997 |
-| Świętokrzyskie | Z2 | 4.78 | 13.03 | €4.59 | 1999 |
-| Pomerania | Z3 | 4.49 | 9.76 | €4.31 | 1997 |
-| Lubusz | Z3 | 3.19 | 8.63 | €3.06 | 1999 |
-| Lower Silesia | Z3 | 0.33 | 6.69 | €0.32 | 1995 |
-| Lublin | Z2 | 0.33 | 7.86 | €0.32 | 1995 |
-| Lesser Poland | Z2 | 0.33 | 5.33 | €0.32 | 1995 |
-| Masovian | Z1 | 0.33 | 8.56 | €0.32 | 1995 |
-| Opole | Z2 | 0.33 | 7.64 | €0.32 | 1995 |
-| Podlaskie | Z1 | 0.33 | 6.45 | €0.32 | 1995 |
-| Subcarpathian | Z2 | 0.33 | 7.44 | €0.32 | 1995 |
-| Silesia | Z3 | 0.33 | 7.59 | €0.32 | 1995 |
-| Greater Poland | Z3 | 0.33 | 5.90 | €0.32 | 1995 |
-| West Pomerania | Z3 | 0.33 | 6.62 | €0.32 | 1995 |
+| Kuyavian-Pomeranian | Z3 | 14.31 | 21.48 | €13.74 | 1997 |
+| Łódź | Z1 | 13.53 | 20.77 | €12.99 | 2002 |
+| Warmia-Mazury | Z1 | 8.43 | 14.54 | €8.09 | 2002 |
+| Świętokrzyskie | Z2 | 7.92 | 16.79 | €7.61 | 2002 |
+| Pomerania | Z3 | 7.13 | 12.39 | €6.84 | 2002 |
+| Lubusz | Z3 | 4.88 | 10.31 | €4.68 | 2002 |
+| Lower Silesia | Z3 | 0.33 | 6.59 | €0.32 | 1995 |
+| Lublin | Z2 | 0.33 | 7.65 | €0.32 | 1995 |
+| Lesser Poland | Z2 | 0.33 | 5.35 | €0.32 | 1995 |
+| Masovian | Z1 | 0.33 | 9.05 | €0.32 | 1995 |
+| Opole | Z2 | 0.33 | 7.52 | €0.32 | 1995 |
+| Podlaskie | Z1 | 0.33 | 6.33 | €0.32 | 1995 |
+| Subcarpathian | Z2 | 0.33 | 7.33 | €0.32 | 1995 |
+| Silesia | Z3 | 0.33 | 7.54 | €0.32 | 1995 |
+| Greater Poland | Z3 | 0.33 | 6.67 | €0.32 | 1995 |
+| West Pomerania | Z3 | 0.33 | 6.46 | €0.32 | 1995 |
 
 ### Zone Averages — PL
 
-- **Z1**: 4 regions — Avg Std LR 3.98%, Avg Premium €3.82/ha
-- **Z2**: 5 regions — Avg Std LR 1.22%, Avg Premium €1.17/ha
-- **Z3**: 7 regions — Avg Std LR 2.91%, Avg Premium €2.79/ha
+- **Z1**: 4 regions — Avg Std LR 5.65%, Avg Premium €5.43/ha
+- **Z2**: 5 regions — Avg Std LR 1.85%, Avg Premium €1.78/ha
+- **Z3**: 7 regions — Avg Std LR 3.95%, Avg Premium €3.79/ha
 
 ---
 
@@ -252,30 +254,31 @@
 | 1999 | 0.33 | 5.38 | South Bohemia | 0.3 |
 | 2000 | 0.33 | 5.38 | South Bohemia | 0.3 |
 | 2001 | 0.33 | 5.41 | South Bohemia | 0.3 |
+| 2002 | 0.33 | 6.25 | South Bohemia | 0.3 |
 
 ### Regional Pricing Summary (30yr weighted)
 
 | Region | Zone | LR Std % | LR Full % | Premium €/ha | Worst Year |
 |--------|------|----------|-----------|--------------|-----------|
-| South Bohemia | Z2 | 0.43 | 6.11 | €0.42 | 1995 |
-| South Moravia | Z2 | 0.43 | 5.49 | €0.42 | 1995 |
-| Karlovy Vary | Z3 | 0.43 | 6.31 | €0.42 | 1995 |
-| Hradec Králové | Z2 | 0.43 | 6.36 | €0.42 | 1995 |
-| Liberec | Z3 | 0.43 | 5.45 | €0.42 | 1995 |
-| Moravian-Silesian | Z2 | 0.43 | 6.21 | €0.42 | 1995 |
-| Olomouc | Z2 | 0.43 | 6.17 | €0.42 | 1995 |
-| Pardubice | Z2 | 0.43 | 6.31 | €0.42 | 1995 |
-| Plzeň | Z3 | 0.43 | 6.91 | €0.42 | 1995 |
-| Prague | Z2 | 0.43 | 5.49 | €0.42 | 1995 |
-| Central Bohemia | Z2 | 0.43 | 6.15 | €0.42 | 1995 |
-| Ústí nad Labem | Z3 | 0.43 | 6.09 | €0.42 | 1995 |
-| Vysočina | Z3 | 0.43 | 6.15 | €0.42 | 1995 |
-| Zlín | Z2 | 0.43 | 5.49 | €0.42 | 1995 |
+| South Bohemia | Z2 | 0.42 | 6.65 | €0.40 | 1995 |
+| South Moravia | Z2 | 0.42 | 5.48 | €0.40 | 1995 |
+| Karlovy Vary | Z3 | 0.42 | 6.23 | €0.40 | 1995 |
+| Hradec Králové | Z2 | 0.42 | 6.25 | €0.40 | 1995 |
+| Liberec | Z3 | 0.42 | 5.44 | €0.40 | 1995 |
+| Moravian-Silesian | Z2 | 0.42 | 6.74 | €0.40 | 1995 |
+| Olomouc | Z2 | 0.42 | 6.15 | €0.40 | 1995 |
+| Pardubice | Z2 | 0.42 | 6.18 | €0.40 | 1995 |
+| Plzeň | Z3 | 0.42 | 6.71 | €0.40 | 1995 |
+| Prague | Z2 | 0.42 | 5.47 | €0.40 | 1995 |
+| Central Bohemia | Z2 | 0.42 | 6.05 | €0.40 | 1995 |
+| Ústí nad Labem | Z3 | 0.42 | 6.05 | €0.40 | 1995 |
+| Vysočina | Z3 | 0.42 | 6.08 | €0.40 | 1995 |
+| Zlín | Z2 | 0.42 | 5.55 | €0.40 | 1995 |
 
 ### Zone Averages — CZ
 
-- **Z2**: 9 regions — Avg Std LR 0.43%, Avg Premium €0.42/ha
-- **Z3**: 5 regions — Avg Std LR 0.43%, Avg Premium €0.42/ha
+- **Z2**: 9 regions — Avg Std LR 0.42%, Avg Premium €0.40/ha
+- **Z3**: 5 regions — Avg Std LR 0.42%, Avg Premium €0.40/ha
 
 ---
 
