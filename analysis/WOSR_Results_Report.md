@@ -10,7 +10,7 @@
 |---------|---------|-------|-----------------|------------------|-----------------|
 | RO | 42 | 14 | 2.9% | 9.0% | €2.75 |
 | MD | 29 | 6 | 0.7% | 5.8% | €0.65 |
-| PL | 16 | 5 | 3.6% | 10.7% | €3.43 |
+| PL | 16 | 6 | 3.0% | 9.8% | €2.91 |
 | HU | 19 | 6 | 4.6% | 10.0% | €4.41 |
 | CZ | 14 | 6 | 0.5% | 6.2% | €0.43 |
 | SK | 8 | 5 | 0.3% | 5.4% | €0.32 |
@@ -158,33 +158,34 @@
 | 1997 | 7.20 | 13.77 | Kuyavian-Pomeranian | 35.7 |
 | 1998 | 0.37 | 6.02 | Kuyavian-Pomeranian | 0.7 |
 | 1999 | 7.65 | 13.06 | Kuyavian-Pomeranian | 35.7 |
+| 2000 | 0.33 | 5.40 | Lower Silesia | 0.3 |
 
 ### Regional Pricing Summary (30yr weighted)
 
 | Region | Zone | LR Std % | LR Full % | Premium €/ha | Worst Year |
 |--------|------|----------|-----------|--------------|-----------|
-| Kuyavian-Pomeranian | Z3 | 15.76 | 22.84 | €15.13 | 1997 |
-| Łódź | Z1 | 14.43 | 21.55 | €13.85 | 1999 |
-| Warmia-Mazury | Z1 | 6.64 | 13.24 | €6.38 | 1997 |
-| Świętokrzyskie | Z2 | 6.56 | 16.12 | €6.30 | 1999 |
-| Pomerania | Z3 | 6.15 | 11.46 | €5.90 | 1997 |
-| Lubusz | Z3 | 4.33 | 9.95 | €4.15 | 1999 |
-| Lower Silesia | Z3 | 0.33 | 7.24 | €0.32 | 1995 |
-| Lublin | Z2 | 0.33 | 8.84 | €0.32 | 1995 |
+| Kuyavian-Pomeranian | Z3 | 13.19 | 19.92 | €12.66 | 1997 |
+| Łódź | Z1 | 12.08 | 18.85 | €11.60 | 1999 |
+| Warmia-Mazury | Z1 | 5.59 | 12.01 | €5.37 | 1997 |
+| Świętokrzyskie | Z2 | 5.52 | 14.32 | €5.30 | 1999 |
+| Pomerania | Z3 | 5.18 | 10.50 | €4.97 | 1997 |
+| Lubusz | Z3 | 3.66 | 9.18 | €3.52 | 1999 |
+| Lower Silesia | Z3 | 0.33 | 6.92 | €0.32 | 1995 |
+| Lublin | Z2 | 0.33 | 8.28 | €0.32 | 1995 |
 | Lesser Poland | Z2 | 0.33 | 5.33 | €0.32 | 1995 |
-| Masovian | Z1 | 0.33 | 9.85 | €0.32 | 1995 |
-| Opole | Z2 | 0.33 | 8.56 | €0.32 | 1995 |
-| Podlaskie | Z1 | 0.33 | 6.79 | €0.32 | 1995 |
-| Subcarpathian | Z2 | 0.33 | 8.28 | €0.32 | 1995 |
-| Silesia | Z3 | 0.33 | 8.49 | €0.32 | 1995 |
-| Greater Poland | Z3 | 0.33 | 6.12 | €0.32 | 1995 |
-| West Pomerania | Z3 | 0.33 | 7.14 | €0.32 | 1995 |
+| Masovian | Z1 | 0.33 | 9.10 | €0.32 | 1995 |
+| Opole | Z2 | 0.33 | 8.02 | €0.32 | 1995 |
+| Podlaskie | Z1 | 0.33 | 6.57 | €0.32 | 1995 |
+| Subcarpathian | Z2 | 0.33 | 7.79 | €0.32 | 1995 |
+| Silesia | Z3 | 0.33 | 7.96 | €0.32 | 1995 |
+| Greater Poland | Z3 | 0.33 | 5.99 | €0.32 | 1995 |
+| West Pomerania | Z3 | 0.33 | 6.84 | €0.32 | 1995 |
 
 ### Zone Averages — PL
 
-- **Z1**: 4 regions — Avg Std LR 5.43%, Avg Premium €5.22/ha
-- **Z2**: 5 regions — Avg Std LR 1.58%, Avg Premium €1.52/ha
-- **Z3**: 7 regions — Avg Std LR 3.94%, Avg Premium €3.78/ha
+- **Z1**: 4 regions — Avg Std LR 4.58%, Avg Premium €4.40/ha
+- **Z2**: 5 regions — Avg Std LR 1.37%, Avg Premium €1.32/ha
+- **Z3**: 7 regions — Avg Std LR 3.34%, Avg Premium €3.20/ha
 
 ---
 
