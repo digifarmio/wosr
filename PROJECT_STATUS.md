@@ -1,6 +1,6 @@
 # WOSR Underwriting Pipeline — Project Status
 
-**Last updated:** 2026-03-11
+**Last updated:** 2026-03-12
 **Meeting:** Descartes/Corteva call at 3 PM CET 2026-03-11 (completed)
 
 ---
@@ -28,81 +28,152 @@ See `analysis/codex_review_response.md` for full review response.
 
 ---
 
-## Computation Status (as of 2026-03-11 ~00:00 CET)
+## Key Parameters
 
-### SLURM Jobs Running on Saga
-| Job | Country | Elapsed | Wall Limit | Years Done |
-|-----|---------|---------|------------|------------|
-| 17042873 | RO | 2h06m | 6h | 1995–2004 (10 yrs) |
-| 17043177 | MD | 58m | 8h | 1995 (1 yr) |
-| 17043178 | PL | 58m | 8h | 1995 (1 yr) |
-| 17043179 | HU | 58m | 8h | 0 (queued) |
-| 17043180 | CZ | 58m | 8h | 0 (queued) |
-| 17043181 | SK | 58m | 8h | 1995 (1 yr) |
-| 17044376 | RO cleanup 1995-2003 | 20m | 4h | 0 (queued) |
-
-**CDS throttling**: 7 concurrent jobs competing for ~2 CDS slots → 30-40 min wait per request. Each job completing ~1-2 years/hour.
-
-### S3 Results Available
-| Country | CSV Files | Years |
-|---------|-----------|-------|
-| RO | 1 | 2004 |
-| MD | 1 | 1995 |
-| PL | 1 | 1995 |
-| HU | 0 | — |
-| CZ | 0 | — |
-| SK | 1 | 1995 |
-
-**Note:** RO 1995–2003 were deleted from S3 (had wrong sigmoid ELF_X0=10.0). Cleanup job 17044376 is recomputing these with fixed calibration.
-
-### Expected Completion
-- RO main job (6h wall): will reach ~2008-2010 before expiring. Need resubmit.
-- Country jobs (8h wall): will reach ~2003-2008 before expiring. Need resubmit.
-- Full 30-year run requires 3-4 SLURM submissions per country due to CDS throttling.
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| ELF_K | 0.35 | Sigmoid steepness |
+| ELF_X0 | 13.39 | Calibrated midpoint (was 10.0 — critical fix) |
+| CF | 0.3589 | Marsh-calibrated: ELF(10)=0.234 → LR=8.4% |
+| Sum insured | €96/ha | Corteva seed bag value |
+| Commercial loading | 1.30× | 30% margin |
+| Pricing blend | 60% 5yr + 40% 30yr | Weighted LR for premium |
 
 ---
 
-## After Jobs Complete: Run Finalize Script
+## S3 Results (as of 2026-03-12 ~13:00 CET)
 
+**Bucket:** `s3://digifarm-wosr-underwriting/results/<COUNTRY>/`
+
+**Total: 55 CSV files**
+
+| Country | Years in S3 | Years Missing |
+|---------|-------------|---------------|
+| RO | 1995–2010 (16 yrs) | 2011–2024 (14 more) |
+| CZ | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
+| HU | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
+| MD | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
+| PL | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
+| SK | 1995–2001 (7 yrs) | 2002–2024 (23 more) |
+
+---
+
+## SLURM Jobs Running on Saga (as of ~13:00 CET 2026-03-12)
+
+| Job ID | What | Time Left |
+|--------|------|-----------|
+| 17052032 | wosr_analysis (RO, years 2011+) | ~4h10m |
+| 17049864 | wosr_%x MD | ~2h29m |
+| 17049865 | wosr_%x PL | ~2h29m |
+| 17049866 | wosr_%x HU | ~2h29m |
+| 17049867 | wosr_%x CZ | ~2h29m |
+| 17049868 | wosr_%x SK | ~2h29m |
+
+**CDS throttling:** Severe — ~1 year per 30–60 min per job due to max ~2 concurrent CDS slots across all jobs. Jobs will not finish 30 years before wall time expires. **Resubmission required** after expiry. S3 skip logic handles resumption automatically.
+
+---
+
+## Resubmitting Jobs (after they expire)
+
+Country jobs expire ~15:30 CET, RO job ~17:10 CET. After each expires, resubmit:
+
+```bash
+# Copy scripts to Saga (do once)
+scp scripts/wosr_saga_country.sbatch digifarm@saga.sigma2.no:/cluster/work/users/digifarm/wosr/scripts/
+scp scripts/wosr_saga.sbatch digifarm@saga.sigma2.no:/cluster/work/users/digifarm/wosr/scripts/
+
+# Resubmit country jobs
+ssh saga "cd /cluster/work/users/digifarm/wosr && sbatch --job-name=wosr_MD scripts/wosr_saga_country.sbatch MD"
+ssh saga "cd /cluster/work/users/digifarm/wosr && sbatch --job-name=wosr_PL scripts/wosr_saga_country.sbatch PL"
+ssh saga "cd /cluster/work/users/digifarm/wosr && sbatch --job-name=wosr_HU scripts/wosr_saga_country.sbatch HU"
+ssh saga "cd /cluster/work/users/digifarm/wosr && sbatch --job-name=wosr_CZ scripts/wosr_saga_country.sbatch CZ"
+ssh saga "cd /cluster/work/users/digifarm/wosr && sbatch --job-name=wosr_SK scripts/wosr_saga_country.sbatch SK"
+
+# Resubmit RO
+ssh saga "cd /cluster/work/users/digifarm/wosr && sbatch scripts/wosr_saga.sbatch"
+```
+
+---
+
+## Syncing New Results & Committing
+
+```bash
+cd /home/ubuntu/wosr
+aws s3 sync s3://digifarm-wosr-underwriting/results/ results/ --quiet
+python3 scripts/wosr_aggregate.py --all
+python3 scripts/wosr_analyze_results.py
+git add results/ analysis/
+git commit -m "Add <COUNTRY> results through <YEAR>, update analysis"
+git push
+```
+
+Or use the all-in-one finalize script:
 ```bash
 bash /home/ubuntu/wosr/scripts/wosr_finalize.sh
 ```
 
-This will:
-1. Sync all S3 results locally
-2. Run `wosr_aggregate.py --all`
-3. Run `wosr_analyze_results.py` → `analysis/WOSR_Results_Report.md`
-4. Sync to S3
+---
+
+## Corteva Sales Data (pending integration)
+
+File: `WOSR sales 2025.xlsx` — Corteva Romania 2025 seed bag sales by Area.
+
+| Area | Bags |
+|------|------|
+| Area 1 | 11,549 |
+| Area 2 | 12,865 |
+| Area 3 | 5,544 |
+| Area 4 | 22,594 |
+| Area 5 | 5,678 |
+| Area 6 | 2,585 |
+| Area T | 2,192 |
+| Area 8 | 2,653 |
+| Area 10 | 7,364 |
+| Area 11 | 4,763 |
+| **Total** | **77,787** |
+
+**Blocker:** "Areas" are Corteva internal sales territories, not Romanian counties. Need Area→county mapping from Nils Helset (Slack: U8TCVUANL) before integrating as exposure weights.
 
 ---
 
-## Key Results (Preliminary)
+## After All 30 Years Complete: Final Steps
 
-| Country | Year | Nat. Mean Std LR | Notable |
-|---------|------|-----------------|---------|
+1. `bash /home/ubuntu/wosr/scripts/wosr_finalize.sh`
+2. `python3 scripts/wosr_corteva_pricing.py --all`
+3. Update `pricing/WOSR_Corteva_Pricing_Package.md` with final 30-year numbers
+4. Integrate Corteva sales data as exposure weights (once Area→county map received from Nils)
+5. Send final package to Matti Tiainen (matti.tiainen@frontera.ag)
+
+---
+
+## Key Results (Preliminary — based on available years)
+
+| Country | Year | Nat. Mean LR | Notable |
+|---------|------|-------------|---------|
 | RO | 2003 | 8.4% | 2003 drought — worst year, validates model |
 | RO | 2004 | 0.33% | Normal year |
 | MD | 1995 | 0.74% | Low loss |
 | PL | 1995 | 0.54% | Low loss |
 | SK | 1995 | 0.42% | Low loss |
 
-RO 2003 national mean of 8.4% = exact Marsh calibration target. Model discriminative power confirmed.
+RO 2003 national mean = exact Marsh calibration target. Model discriminative power confirmed.
 
 ---
 
-## Next Steps (Priority Order)
+## Future Improvements (not urgent for v1)
 
-1. **Resubmit jobs** as they hit wall time: `ssh saga "sbatch wosr_saga_country.sbatch <COUNTRY>"`
-2. **Wait for cleanup job** 17044376 to complete (RO 1995–2003 with fixed sigmoid)
-3. **Run finalize script** once all years done
-4. **EUROSTAT acreage weights** — add county-level WOSR area weights for national LR
-5. **Hourly ERA5** — replace 4×daily with hourly for accurate frost minima
-6. **Country-specific CF** — calibrate non-RO countries once claims data available (Matti/Corteva)
+1. **EUROSTAT acreage weights** — county-level WOSR sown area as national LR weights
+2. **Hourly ERA5** — replace 4×daily with hourly for accurate frost minima
+3. **Country-specific CF** — calibrate non-RO countries once claims data available (Matti/Corteva)
+4. **Satellite validation** — plant count model per county
 
 ---
 
-## Pending Questions for Corteva/Descartes Meeting Follow-up
+## Contacts
 
-- Country-specific CF calibration: need non-RO historical emergence claims (Matti Tiainen)
-- Satellite validation data for plant count model per county
-- Confirmed trigger structure for PL/HU/CZ/SK (same binary 0%/50% as RO?)
+| Person | Role | Contact |
+|--------|------|---------|
+| Matti Tiainen | Frontera Ag (client) | matti.tiainen@frontera.ag |
+| Nils Helset | DigiFarm CEO | Slack U8TCVUANL, DM: DE0159YCA |
+| Antoine & Etienne | Descartes (reinsurance) | via email |
+| Konstantin Varik | DigiFarm CTO | project owner |
