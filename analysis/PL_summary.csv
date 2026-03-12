@@ -1,17 +1,17 @@
 country,region_id,region_name,risk_zone,n_years,one_bad_year,lr_30yr_pct,lr_5yr_pct,lr_pricing_pct,lr_full_mean_pct,lr_std_max_pct,worst_year,premium_eur_ha
-PL,PL-DS,Lower Silesia,Z3,2,1,33.55,,33.55,9.76,0.33,1995,32.21
-PL,PL-KP,Kuyavian-Pomeranian,Z3,2,1,35.56,,35.56,13.28,6.35,1995,34.14
-PL,PL-LB,Lubusz,Z3,2,1,34.6,,34.6,8.1,3.46,1995,33.21
-PL,PL-LD,Łódź,Z1,2,1,35.6,,35.6,13.27,6.35,1995,34.18
-PL,PL-LU,Lublin,Z2,2,1,33.55,,33.55,10.7,0.33,1995,32.21
-PL,PL-MA,Lesser Poland,Z2,2,1,33.55,,33.55,5.33,0.33,1995,32.21
-PL,PL-MZ,Masovian,Z1,2,1,33.55,,33.55,13.15,0.33,1995,32.21
-PL,PL-OP,Opole,Z2,2,1,33.55,,33.55,12.98,0.33,1995,32.21
-PL,PL-PD,Podlaskie,Z1,2,1,33.55,,33.55,5.42,0.33,1995,32.21
-PL,PL-PK,Subcarpathian,Z2,2,1,33.55,,33.55,12.46,0.33,1995,32.21
-PL,PL-PM,Pomerania,Z3,2,1,36.24,,36.24,9.96,8.39,1995,34.79
-PL,PL-SK,Świętokrzyskie,Z2,2,1,35.02,,35.02,15.26,4.72,1995,33.62
-PL,PL-SL,Silesia,Z3,2,1,33.55,,33.55,12.89,0.33,1995,32.21
-PL,PL-WN,Warmia-Mazury,Z1,2,1,34.92,,34.92,7.55,3.46,1995,33.52
-PL,PL-WP,Greater Poland,Z3,2,1,33.55,,33.55,7.06,0.33,1995,32.21
-PL,PL-ZP,West Pomerania,Z3,2,1,33.55,,33.55,9.5,0.33,1995,32.21
+PL,PL-DS,Lower Silesia,Z3,3,1,25.25,,25.25,8.45,0.33,1995,24.24
+PL,PL-KP,Kuyavian-Pomeranian,Z3,3,1,35.61,,35.61,22.55,35.74,1997,34.18
+PL,PL-LB,Lubusz,Z3,3,1,27.54,,27.54,9.25,6.35,1997,26.43
+PL,PL-LD,Łódź,Z1,3,1,34.57,,34.57,21.23,31.47,1997,33.19
+PL,PL-LU,Lublin,Z2,3,1,25.25,,25.25,11.12,0.33,1995,24.24
+PL,PL-MA,Lesser Poland,Z2,3,1,25.25,,25.25,5.33,0.33,1995,24.24
+PL,PL-MZ,Masovian,Z1,3,1,25.25,,25.25,10.77,0.33,1995,24.24
+PL,PL-OP,Opole,Z2,3,1,25.25,,25.25,10.66,0.33,1995,24.24
+PL,PL-PD,Podlaskie,Z1,3,1,25.25,,25.25,7.59,0.33,1995,24.24
+PL,PL-PK,Subcarpathian,Z2,3,1,25.25,,25.25,10.19,0.33,1995,24.24
+PL,PL-PM,Pomerania,Z3,3,1,29.89,,29.89,12.04,10.85,1997,28.7
+PL,PL-SK,Świętokrzyskie,Z2,3,1,26.72,,26.72,14.65,4.72,1995,25.65
+PL,PL-SL,Silesia,Z3,3,1,25.25,,25.25,10.48,0.33,1995,24.24
+PL,PL-WN,Warmia-Mazury,Z1,3,1,32.59,,32.59,15.47,25.62,1997,31.29
+PL,PL-WP,Greater Poland,Z3,3,1,25.25,,25.25,6.59,0.33,1995,24.24
+PL,PL-ZP,West Pomerania,Z3,3,1,25.25,,25.25,8.17,0.33,1995,24.24
