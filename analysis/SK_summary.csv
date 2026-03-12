@@ -1,9 +1,9 @@
-country,region_id,region_name,risk_zone,n_years,one_bad_year_applied,lr_std_30yr_pct,lr_std_5yr_pct,lr_std_pricing_pct,lr_full_pricing_pct,premium_std_0pct,premium_std_eur_ha,premium_std_50pct,premium_full_0pct,premium_full_eur_ha
-SK,SK-BA,Bratislava,Z2,4,1,20.26,,20.26,5.33,20.26,19.45,10.13,5.33,5.12
-SK,SK-BB,Banská Bystrica,Z3,4,1,20.26,,20.26,5.4,20.26,19.45,10.13,5.4,5.18
-SK,SK-KE,Košice,Z1,4,1,20.26,,20.26,5.4,20.26,19.45,10.13,5.4,5.18
-SK,SK-NI,Nitra,Z1,4,1,20.26,,20.26,5.33,20.26,19.45,10.13,5.33,5.12
-SK,SK-PO,Prešov,Z2,4,1,20.26,,20.26,5.47,20.26,19.45,10.13,5.47,5.25
-SK,SK-TN,Trenčín,Z2,4,1,20.26,,20.26,5.36,20.26,19.45,10.13,5.36,5.15
-SK,SK-TT,Trnava,Z2,4,1,20.26,,20.26,5.33,20.26,19.45,10.13,5.33,5.12
-SK,SK-ZA,Žilina,Z3,4,1,20.26,,20.26,5.33,20.26,19.45,10.13,5.33,5.12
+country,region_id,region_name,risk_zone,n_years,one_bad_year,lr_30yr_pct,lr_5yr_pct,lr_pricing_pct,lr_full_mean_pct,lr_std_max_pct,worst_year,premium_eur_ha
+SK,SK-BA,Bratislava,Z2,4,1,20.26,,20.26,5.33,0.33,1995,19.45
+SK,SK-BB,Banská Bystrica,Z3,4,1,20.26,,20.26,5.4,0.33,1995,19.45
+SK,SK-KE,Košice,Z1,4,1,20.26,,20.26,5.4,0.33,1995,19.45
+SK,SK-NI,Nitra,Z1,4,1,20.26,,20.26,5.33,0.33,1995,19.45
+SK,SK-PO,Prešov,Z2,4,1,20.26,,20.26,5.47,0.33,1995,19.45
+SK,SK-TN,Trenčín,Z2,4,1,20.26,,20.26,5.36,0.33,1995,19.45
+SK,SK-TT,Trnava,Z2,4,1,20.26,,20.26,5.33,0.33,1995,19.45
+SK,SK-ZA,Žilina,Z3,4,1,20.26,,20.26,5.33,0.33,1995,19.45

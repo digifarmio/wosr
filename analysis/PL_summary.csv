@@ -1,17 +1,17 @@
-country,region_id,region_name,risk_zone,n_years,one_bad_year_applied,lr_std_30yr_pct,lr_std_5yr_pct,lr_std_pricing_pct,lr_full_pricing_pct,premium_std_0pct,premium_std_eur_ha,premium_std_50pct,premium_full_0pct,premium_full_eur_ha
-PL,PL-DS,Lower Silesia,Z3,4,1,20.26,,20.26,7.72,20.26,19.45,10.13,7.72,7.41
-PL,PL-KP,Kuyavian-Pomeranian,Z3,4,1,28.61,,28.61,18.37,28.61,27.47,14.31,18.37,17.64
-PL,PL-LB,Lubusz,Z3,4,1,22.16,,22.16,8.39,22.16,21.27,11.08,8.39,8.06
-PL,PL-LD,Łódź,Z1,4,1,27.72,,27.72,17.3,27.72,26.61,13.86,17.3,16.61
-PL,PL-LU,Lublin,Z2,4,1,20.26,,20.26,9.71,20.26,19.45,10.13,9.71,9.32
-PL,PL-MA,Lesser Poland,Z2,4,1,20.26,,20.26,5.33,20.26,19.45,10.13,5.33,5.12
-PL,PL-MZ,Masovian,Z1,4,1,20.26,,20.26,10.98,20.26,19.45,10.13,10.98,10.54
-PL,PL-OP,Opole,Z2,4,1,20.26,,20.26,9.37,20.26,19.45,10.13,9.37,9.0
-PL,PL-PD,Podlaskie,Z1,4,1,20.26,,20.26,7.15,20.26,19.45,10.13,7.15,6.87
-PL,PL-PK,Subcarpathian,Z2,4,1,20.26,,20.26,9.02,20.26,19.45,10.13,9.02,8.66
-PL,PL-PM,Pomerania,Z3,4,1,23.98,,23.98,10.36,23.98,23.02,11.99,10.36,9.95
-PL,PL-SK,Świętokrzyskie,Z2,4,1,21.44,,21.44,12.49,21.44,20.58,10.72,12.49,11.99
-PL,PL-SL,Silesia,Z3,4,1,20.26,,20.26,9.28,20.26,19.45,10.13,9.28,8.91
-PL,PL-WN,Warmia-Mazury,Z1,4,1,26.14,,26.14,13.11,26.14,25.09,13.07,13.11,12.58
-PL,PL-WP,Greater Poland,Z3,4,1,20.26,,20.26,6.32,20.26,19.45,10.13,6.32,6.07
-PL,PL-ZP,West Pomerania,Z3,4,1,20.26,,20.26,7.59,20.26,19.45,10.13,7.59,7.28
+country,region_id,region_name,risk_zone,n_years,one_bad_year,lr_30yr_pct,lr_5yr_pct,lr_pricing_pct,lr_full_mean_pct,lr_std_max_pct,worst_year,premium_eur_ha
+PL,PL-DS,Lower Silesia,Z3,4,1,20.26,,20.26,7.72,0.33,1995,19.45
+PL,PL-KP,Kuyavian-Pomeranian,Z3,4,1,28.61,,28.61,18.37,35.74,1997,27.47
+PL,PL-LB,Lubusz,Z3,4,1,22.16,,22.16,8.39,6.35,1997,21.27
+PL,PL-LD,Łódź,Z1,4,1,27.72,,27.72,17.3,31.47,1997,26.61
+PL,PL-LU,Lublin,Z2,4,1,20.26,,20.26,9.71,0.33,1995,19.45
+PL,PL-MA,Lesser Poland,Z2,4,1,20.26,,20.26,5.33,0.33,1995,19.45
+PL,PL-MZ,Masovian,Z1,4,1,20.26,,20.26,10.98,0.33,1995,19.45
+PL,PL-OP,Opole,Z2,4,1,20.26,,20.26,9.37,0.33,1995,19.45
+PL,PL-PD,Podlaskie,Z1,4,1,20.26,,20.26,7.15,0.33,1995,19.45
+PL,PL-PK,Subcarpathian,Z2,4,1,20.26,,20.26,9.02,0.33,1995,19.45
+PL,PL-PM,Pomerania,Z3,4,1,23.98,,23.98,10.36,10.85,1997,23.02
+PL,PL-SK,Świętokrzyskie,Z2,4,1,21.44,,21.44,12.49,4.72,1995,20.58
+PL,PL-SL,Silesia,Z3,4,1,20.26,,20.26,9.28,0.33,1995,19.45
+PL,PL-WN,Warmia-Mazury,Z1,4,1,26.14,,26.14,13.11,25.62,1997,25.09
+PL,PL-WP,Greater Poland,Z3,4,1,20.26,,20.26,6.32,0.33,1995,19.45
+PL,PL-ZP,West Pomerania,Z3,4,1,20.26,,20.26,7.59,0.33,1995,19.45
