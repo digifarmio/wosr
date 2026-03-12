@@ -65,6 +65,21 @@ def build_pricing_table(summary_df, seed_df=None):
     """
     df = summary_df.copy()
 
+    # Normalize column name (new schema uses lr_std_pricing_pct)
+    if "lr_std_pricing_pct" in df.columns and "lr_pricing_pct" not in df.columns:
+        df["lr_pricing_pct"] = df["lr_std_pricing_pct"]
+    if "lr_full_pricing_pct" in df.columns and "lr_full_mean_pct" not in df.columns:
+        df["lr_full_mean_pct"] = df["lr_full_pricing_pct"]
+    if "lr_std_30yr_pct" in df.columns and "lr_30yr_pct" not in df.columns:
+        df["lr_30yr_pct"] = df["lr_std_30yr_pct"]
+    if "one_bad_year_applied" in df.columns and "one_bad_year" not in df.columns:
+        df["one_bad_year"] = df["one_bad_year_applied"]
+    # Derive worst_year and lr_std_max_pct if missing
+    if "worst_year" not in df.columns:
+        df["worst_year"] = "—"
+    if "lr_std_max_pct" not in df.columns:
+        df["lr_std_max_pct"] = df["lr_pricing_pct"]
+
     # Gross premium (pure technical rate × sum insured)
     df["gross_premium_eur_ha"] = (df["lr_pricing_pct"] / 100 * SUM_INSURED).round(2)
 
