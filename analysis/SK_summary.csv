@@ -1,9 +1,9 @@
 country,region_id,region_name,risk_zone,n_years,one_bad_year,lr_30yr_pct,lr_5yr_pct,lr_pricing_pct,lr_full_mean_pct,lr_std_max_pct,worst_year,premium_eur_ha
-SK,SK-BA,Bratislava,Z2,7,0,1.85,,1.85,6.85,10.85,2000,1.78
-SK,SK-BB,Banská Bystrica,Z3,7,0,0.33,,0.33,5.37,0.33,1995,0.32
-SK,SK-KE,Košice,Z1,7,0,0.33,,0.33,5.37,0.33,1995,0.32
-SK,SK-NI,Nitra,Z1,7,0,0.64,,0.64,5.64,2.51,2000,0.62
-SK,SK-PO,Prešov,Z2,7,0,0.33,,0.33,5.43,0.33,1995,0.32
-SK,SK-TN,Trenčín,Z2,7,0,0.33,,0.33,5.35,0.33,1995,0.32
-SK,SK-TT,Trnava,Z2,7,0,0.47,,0.47,5.47,1.29,2000,0.45
-SK,SK-ZA,Žilina,Z3,7,0,0.33,,0.33,5.33,0.33,1995,0.32
+SK,SK-BA,Bratislava,Z2,11,0,5.34,,5.34,10.38,31.47,2004,5.13
+SK,SK-BB,Banská Bystrica,Z3,11,0,0.33,,0.33,5.36,0.33,1995,0.32
+SK,SK-KE,Košice,Z1,11,0,0.33,,0.33,5.37,0.33,1995,0.32
+SK,SK-NI,Nitra,Z1,11,0,0.59,,0.59,5.67,2.51,2000,0.57
+SK,SK-PO,Prešov,Z2,11,0,0.33,,0.33,5.42,0.33,1995,0.32
+SK,SK-TN,Trenčín,Z2,11,0,0.34,,0.34,5.39,0.46,2003,0.33
+SK,SK-TT,Trnava,Z2,11,0,0.47,,0.47,5.51,1.29,2000,0.45
+SK,SK-ZA,Žilina,Z3,11,0,0.33,,0.33,5.33,0.33,1995,0.32

@@ -1,6 +1,6 @@
 # WOSR Underwriting Pipeline — Project Status
 
-**Last updated:** 2026-03-12
+**Last updated:** 2026-03-15
 **Meeting:** Descartes/Corteva call at 3 PM CET 2026-03-11 (completed)
 
 ---
@@ -41,35 +41,29 @@ See `analysis/codex_review_response.md` for full review response.
 
 ---
 
-## S3 Results (as of 2026-03-12 ~13:00 CET)
+## S3 Results (as of 2026-03-15)
 
 **Bucket:** `s3://digifarm-wosr-underwriting/results/<COUNTRY>/`
 
-**Total: 55 CSV files**
+**Total: 124 CSV files**
 
-| Country | Years in S3 | Years Missing |
-|---------|-------------|---------------|
-| RO | 1995–2010 (16 yrs) | 2011–2024 (14 more) |
-| CZ | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
-| HU | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
-| MD | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
-| PL | 1995–2002 (8 yrs) | 2003–2024 (22 more) |
-| SK | 1995–2001 (7 yrs) | 2002–2024 (23 more) |
+| Country | Years in S3 | Status |
+|---------|-------------|--------|
+| RO | 1995–2024 (30/30) | ✅ Complete |
+| MD | 1995–2024 (30/30) | ✅ Complete |
+| PL | 1995–2024 (30/30) | ✅ Complete |
+| HU | 1995–2006 (12/30) | ⏸ Blocked — Saga quota exhausted |
+| CZ | 1995–2005 (11/30) | ⏸ Blocked — Saga quota exhausted |
+| SK | 1995–2005 (11/30) | ⏸ Blocked — Saga quota exhausted |
 
 ---
 
-## SLURM Jobs Running on Saga (as of ~13:00 CET 2026-03-12)
+## SLURM Status (as of 2026-03-15)
 
-| Job ID | What | Time Left |
-|--------|------|-----------|
-| 17052032 | wosr_analysis (RO, years 2011+) | ~4h10m |
-| 17049864 | wosr_%x MD | ~2h29m |
-| 17049865 | wosr_%x PL | ~2h29m |
-| 17049866 | wosr_%x HU | ~2h29m |
-| 17049867 | wosr_%x CZ | ~2h29m |
-| 17049868 | wosr_%x SK | ~2h29m |
-
-**CDS throttling:** Severe — ~1 year per 30–60 min per job due to max ~2 concurrent CDS slots across all jobs. Jobs will not finish 30 years before wall time expires. **Resubmission required** after expiry. S3 skip logic handles resumption automatically.
+**Both Saga accounts (nn12037k and nn6000k) billing quota exhausted.**
+- No jobs can run until quota resets (~April 1)
+- HU/CZ/SK pending jobs (17062162–17062164) have been cancelled
+- When quota resets: resubmit per country using the commands below
 
 ---
 

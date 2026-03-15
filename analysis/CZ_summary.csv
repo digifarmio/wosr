@@ -1,15 +1,15 @@
 country,region_id,region_name,risk_zone,n_years,one_bad_year,lr_30yr_pct,lr_5yr_pct,lr_pricing_pct,lr_full_mean_pct,lr_std_max_pct,worst_year,premium_eur_ha
-CZ,CZ-JC,South Bohemia,Z2,8,0,0.42,,0.42,6.65,1.05,1995,0.4
-CZ,CZ-JM,South Moravia,Z2,8,0,0.42,,0.42,5.48,1.05,1995,0.4
-CZ,CZ-KA,Karlovy Vary,Z3,8,0,0.42,,0.42,6.23,1.05,1995,0.4
-CZ,CZ-KR,Hradec Králové,Z2,8,0,0.42,,0.42,6.25,1.05,1995,0.4
-CZ,CZ-LI,Liberec,Z3,8,0,0.42,,0.42,5.44,1.05,1995,0.4
-CZ,CZ-MO,Moravian-Silesian,Z2,8,0,0.42,,0.42,6.74,1.05,1995,0.4
-CZ,CZ-OL,Olomouc,Z2,8,0,0.42,,0.42,6.15,1.05,1995,0.4
-CZ,CZ-PA,Pardubice,Z2,8,0,0.42,,0.42,6.18,1.05,1995,0.4
-CZ,CZ-PL,Plzeň,Z3,8,0,0.42,,0.42,6.71,1.05,1995,0.4
-CZ,CZ-PR,Prague,Z2,8,0,0.42,,0.42,5.47,1.05,1995,0.4
-CZ,CZ-ST,Central Bohemia,Z2,8,0,0.42,,0.42,6.05,1.05,1995,0.4
-CZ,CZ-US,Ústí nad Labem,Z3,8,0,0.42,,0.42,6.05,1.05,1995,0.4
-CZ,CZ-VY,Vysočina,Z3,8,0,0.42,,0.42,6.08,1.05,1995,0.4
-CZ,CZ-ZL,Zlín,Z2,8,0,0.42,,0.42,5.55,1.05,1995,0.4
+CZ,CZ-JC,South Bohemia,Z2,11,0,0.4,,0.4,6.29,1.05,1995,0.38
+CZ,CZ-JM,South Moravia,Z2,11,0,0.4,,0.4,5.45,1.05,1995,0.38
+CZ,CZ-KA,Karlovy Vary,Z3,11,0,0.79,,0.79,6.39,4.72,2003,0.76
+CZ,CZ-KR,Hradec Králové,Z2,11,0,0.42,,0.42,6.04,1.05,1995,0.41
+CZ,CZ-LI,Liberec,Z3,11,0,0.4,,0.4,5.41,1.05,1995,0.38
+CZ,CZ-MO,Moravian-Silesian,Z2,11,0,0.4,,0.4,6.36,1.05,1995,0.38
+CZ,CZ-OL,Olomouc,Z2,11,0,0.4,,0.4,5.93,1.05,1995,0.38
+CZ,CZ-PA,Pardubice,Z2,11,0,0.4,,0.4,5.95,1.05,1995,0.38
+CZ,CZ-PL,Plzeň,Z3,11,0,1.13,,1.13,7.07,8.39,2003,1.08
+CZ,CZ-PR,Prague,Z2,11,0,0.4,,0.4,5.44,1.05,1995,0.38
+CZ,CZ-ST,Central Bohemia,Z2,11,0,0.4,,0.4,5.85,1.05,1995,0.38
+CZ,CZ-US,Ústí nad Labem,Z3,11,0,0.59,,0.59,6.47,2.51,2003,0.57
+CZ,CZ-VY,Vysočina,Z3,11,0,0.4,,0.4,5.88,1.05,1995,0.38
+CZ,CZ-ZL,Zlín,Z2,11,0,0.4,,0.4,5.49,1.05,1995,0.38
