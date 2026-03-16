@@ -1,6 +1,6 @@
 # WOSR Underwriting Pipeline — Project Status
 
-**Last updated:** 2026-03-15
+**Last updated:** 2026-03-16
 **Meeting:** Descartes/Corteva call at 3 PM CET 2026-03-11 (completed)
 
 ---
@@ -110,23 +110,18 @@ bash /home/ubuntu/wosr/scripts/wosr_finalize.sh
 
 ## Corteva Sales Data (pending integration)
 
-File: `WOSR sales 2025.xlsx` — Corteva Romania 2025 seed bag sales by Area.
+File: `WOSR sales 2025.xlsx` — Corteva Romania 2025 seed bag sales by Area (~78K bags total).
 
-| Area | Bags |
-|------|------|
-| Area 1 | 11,549 |
-| Area 2 | 12,865 |
-| Area 3 | 5,544 |
-| Area 4 | 22,594 |
-| Area 5 | 5,678 |
-| Area 6 | 2,585 |
-| Area T | 2,192 |
-| Area 8 | 2,653 |
-| Area 10 | 7,364 |
-| Area 11 | 4,763 |
-| **Total** | **77,787** |
+**Blocker:** "Areas" are Corteva internal sales territories. Area→county mapping requested from Nils on 2026-03-16 via Slack. Nils confirmed (2026-03-12) "same areas as corn" and forwarded email — likely went to k@varik.ru, not Gmail. Awaiting response or check k@varik.ru inbox.
 
-**Blocker:** "Areas" are Corteva internal sales territories, not Romanian counties. Need Area→county mapping from Nils Helset (Slack: U8TCVUANL) before integrating as exposure weights.
+## Outreach Log (2026-03-16)
+
+| Recipient | Channel | Subject | Status |
+|-----------|---------|---------|--------|
+| Nils Helset | Slack DM | Area→county mapping for Corteva sales data | Sent |
+| Matti Tiainen | Gmail draft | WOSR preliminary 30yr pricing (RO/MD/PL) | **Draft — needs review before sending** |
+| Sigma2 support | Gmail draft | Emergency quota top-up (nn12037k/nn6000k) | **Draft — needs review before sending** |
+| Etienne (Descartes) | Gmail draft | Re: Satellite Claim Rate vs Excel Loss Ratio | **Draft from 2026-03-15 — needs review** |
 
 ---
 
