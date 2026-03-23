@@ -1,6 +1,6 @@
 # WOSR Underwriting Pipeline — Project Status
 
-**Last updated:** 2026-03-23
+**Last updated:** 2026-03-23 (session 2)
 **Meeting:** Descartes/Corteva call at 3 PM CET 2026-03-11 (completed)
 
 ---
@@ -69,16 +69,41 @@ Climate-based emergence guarantee pricing for Winter Oilseed Rape (WOSR) across 
 
 All 6 countries uploaded to GDrive country subfolders. Main folder: https://drive.google.com/drive/folders/1_lxwoAFUrmV7yEWQ2HS0tlomVgpKpFFR
 
-| Country | Sheet ID |
-|---------|----------|
-| Romania | 1zH7IyXpe1bJ0uVTp-LlsCZGife7oGBTmrjIBFSg49ZE |
-| Moldova | 1Q97jhCifTnKgIBdS0JnFG2WDDgnQp9jhvufBnrgtor0 |
-| Poland | 1leg8Sk0TXLWR6CuIHAcUzPto5WaTrGFniJXa5e0c-HY |
-| Hungary | 14uMCMNFMv9BbyGKrsmkKh-xtvOXkFpx21J83ibuS4Uo |
-| Czech Republic | 10MXzYGRRENUvjjY9L0hSLzB_G54GXGer1bfUmBR_m0Q |
-| Slovakia | 1aNfh2HOQzkN6M8MHAqQJ-VXyDBDE7Fky51vrI-_2O_o |
+| Country | Sheet ID | Status |
+|---------|----------|--------|
+| Romania | 1zH7IyXpe1bJ0uVTp-LlsCZGife7oGBTmrjIBFSg49ZE | ✅ Verified (42 counties × 35yr, data matches CSVs) |
+| Moldova | 1Q97jhCifTnKgIBdS0JnFG2WDDgnQp9jhvufBnrgtor0 | ✅ Complete |
+| Poland | 1leg8Sk0TXLWR6CuIHAcUzPto5WaTrGFniJXa5e0c-HY | ✅ Complete |
+| Hungary | 14uMCMNFMv9BbyGKrsmkKh-xtvOXkFpx21J83ibuS4Uo | ✅ Complete |
+| Czech Republic | 10MXzYGRRENUvjjY9L0hSLzB_G54GXGer1bfUmBR_m0Q | ✅ Complete |
+| Slovakia | 1aNfh2HOQzkN6M8MHAqQJ-VXyDBDE7Fky51vrI-_2O_o | ✅ Complete |
 
 Format: Country, County, Year, LR Standard (%), LR Full Package (%), Risk Zone, Drought Days, Frost Days, Frost Catastrophic, ELF Raw. Compiled per-county per-year, 1990–2024.
+
+---
+
+## Methodology Docs (v1.1, 23 March 2026)
+
+Updated from 30yr (1995–2024) to 35yr (1990–2025). New docs in GDrive folder: https://drive.google.com/drive/folders/1doORGQUclYCwK9KE9anj8p8G0z3h7CLl
+
+| Doc | GDoc ID |
+|-----|---------|
+| Romania v1.1 | 1OE9yWdKWaSOiTJs_8svptg-0jmegnvSkI49VJkg2gFY |
+| All Countries v1.1 | 1xiDZBxmNkxX9v8_UVi5yUAsVBwHOPaxG0qoYtks7C6g |
+
+Key changes: year range 1995→1990, "30-year"→"35-year", added ERA5 35yr national avg (6.1% std, 10.4% full for RO), updated summary table, added demo link.
+
+---
+
+## Interactive Demo
+
+**S3:** `s3://wosr.demos.digifarm.tools/` (deployed 2026-03-23)
+**URL:** http://wosr.demos.digifarm.tools.s3-website.eu-central-1.amazonaws.com/ ✅ working
+
+**DNS pending:** Add Route53 CNAME: `wosr.demos.digifarm.tools` → `wosr.demos.digifarm.tools.s3-website.eu-central-1.amazonaws.com`
+(Same pattern as tillage-demo.digifarm.tools — no CloudFront needed for MVP)
+
+Features: 6-country tabs, year slider 1990–2024, sortable LR table with heat colors, Chart.js historical trend, Historical Average mode with P90 column.
 
 ---
 
@@ -107,11 +132,13 @@ File: `WOSR sales 2025.xlsx` — ~78K bags by Area (1,2,3,4,5,6,T,8,10,11).
 
 ## Pending Actions (priority order)
 
-1. **Send follow-up to Etienne (Descartes)** — update with 1K corn backtest: avg CR 7.6% vs Excel 6.6% (+1.0%). Draft exists in Gmail (Re: Satellite Claim Rate vs Excel Loss Ratio). Descartes deliverable target: Mar 25-28.
-2. **Send Matti email** — 35yr preliminary pricing for all 6 countries. Gmail draft ready.
-3. **Get Area→county mapping** — from Nils or Alexandra Gheorghe at Corteva.
-4. **Finalize Descartes deliverables package** (target Mar 25-28): county LR tables, risk zones, premiums, methodology notes.
-5. **Corn/sunflower ERA5 methodology** — Nils wants same pipeline for corn/sunflower. Needs crop-specific calibration (Konstantin to design).
+1. **Add DNS record** — `wosr.demos.digifarm.tools` CNAME → `wosr.demos.digifarm.tools.s3-website.eu-central-1.amazonaws.com` in Route53 (need DNS access).
+2. **Share new docs with Nils** — Romania v1.1 and All Countries v1.1 GDocs created 2026-03-23 (IDs above).
+3. **Send Matti email** — 35yr preliminary pricing for all 6 countries. Gmail draft ready (update from 30yr RO/MD/PL to 35yr all 6).
+4. **Get Area→county mapping** — from Nils or Alexandra Gheorghe at Corteva.
+5. **Compute 2025 data** — run Betzy jobs for all 6 countries (year=2025) to extend to 36yr.
+6. **HU seed bags** — waiting for data from Corteva HU country lead before pricing HU.
+7. **Corn/sunflower ERA5 methodology** — Nils wants same pipeline. Needs crop-specific calibration (Konstantin to design).
 
 ---
 
