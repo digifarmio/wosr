@@ -2,11 +2,11 @@ project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 35yr historical analysis, calibrated against Marsh Romania portfolio
 status: idle
 last_save: "2026-03-24T08:30:00Z"
-last_state: null
+last_state: "2026-03-24T17:45:00Z"
 session:
-  id: dde2a4c0-32be-4140-85f9-aabc780c7ac3
-  model: sonnet
-  effort: medium
+  id: new-session
+  model: opus
+  effort: high
   tmux_window: wosr
   tmux_server: default
 what_changed: |
@@ -22,11 +22,10 @@ current_task: idle — all Nils requests completed
 next_steps:
   - Share demo link and new methodology docs with Nils (token=TqH8k66T1hTUi4GT)
   - Update Matti email draft from 30yr RO/MD/PL to 35yr all 6 countries, then send
-  - Compute 2025 data on Betzy (6 countries, sbatch wosr_betzy_country.sbatch) to extend to 36yr
+  - Compute 2025 data on Betzy (6 countries) to extend to 36yr
   - Get Area→county mapping from Nils/Alexandra Gheorghe at Corteva for WOSR sales integration
 blocked_on: null
-needs_human: "DNS propagated, demo is live. Share with Nils: http://wosr.demos.digifarm.tools/?token=TqH8k66T1hTUi4GT"
+needs_human: "Pending outbound comms: share demo with Nils, send Matti email, get Area→county mapping"
 files_touched:
-  - PROJECT_STATUS.md
   - STATE.yaml
 long_running: []

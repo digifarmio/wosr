@@ -1,0 +1,11 @@
+area,counties,n_counties,wosr_sales_bags,est_hectares,avg_lr_std_pct,avg_lr_full_pct,avg_premium_eur_ha,area_total_premium_eur,worst_county,worst_county_lr_pct
+Area 1,"Ialomița, Călărași",2,11549,32997,18.41,19.32,22.97,757926,Călărași,26.09
+Area 2,"Buzău, Brăila, Galați",3,12865,36757,13.97,16.34,17.43,640845,Brăila,21.58
+Area 3,"Iași, Botoșani, Neamț, Suceava",4,5544,15840,2.18,7.5,2.72,43046,Iași,7.6
+Area 4,"Teleorman, Giurgiu, Prahova, Argeș, Ilfov, Dâmbovița",6,22594,64554,8.38,10.89,10.45,674856,Giurgiu,15.92
+Area 5,"Olt, Vâlcea, Dolj, Mehedinți, Gorj",5,5678,16223,9.67,13.76,12.07,195740,Dolj,24.81
+Area 6,"Arad, Timiș, Caraș-Severin, Hunedoara",4,2585,7386,2.68,8.15,3.34,24680,Caraș-Severin,5.24
+Area T,"Brașov, Covasna, Sibiu, Alba, Cluj, Mureș, Bistrița-Năsăud, Harghita",8,2192,6263,1.02,6.94,1.27,7943,Mureș,4.52
+Area 8,"Satu Mare, Bihor, Maramureș, Sălaj",4,2653,7580,3.26,9.18,4.07,30815,Bihor,9.15
+Area 10,"Tulcea, Constanța",2,7364,21040,10.43,12.97,13.01,273739,Tulcea,20.48
+Area 11,"Bacău, Vaslui, Vrancea",3,4763,13609,0.99,6.77,1.24,16870,Bacău,1.49

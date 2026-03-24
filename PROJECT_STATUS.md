@@ -1,6 +1,6 @@
 # WOSR Underwriting Pipeline — Project Status
 
-**Last updated:** 2026-03-23 (session 2)
+**Last updated:** 2026-03-24
 **Meeting:** Descartes/Corteva call at 3 PM CET 2026-03-11 (completed)
 
 ---
@@ -122,23 +122,39 @@ git push
 
 ---
 
-## Corteva Sales Data (pending integration)
+## Corteva Sales Data — INTEGRATED
 
-File: `WOSR sales 2025.xlsx` — ~78K bags by Area (1,2,3,4,5,6,T,8,10,11).
-**Contact for mapping:** Alexandra Gheorghe at Corteva (identified by Morris).
-**Blocker:** Area→county mapping still needed. Nils has it (same as corn areas).
+**Romania WOSR**: `WOSR sales 2025.xlsx` — 77,787 bags across 10 Areas (222,249 est. ha).
+**Area→County mapping**: From `2026 Lumiposa corn.xlsx` (Corteva corn areas = same as WOSR).
+**Area pricing**: `pricing/RO_area_pricing.csv` + `pricing/RO_Area_Pricing_Report.md`
+**Total estimated portfolio premium**: EUR 2,666,458
+
+**Slovakia WOSR**: GDrive `Frontera X _ Corteva SK Template _ WOSR Sales Data 2025` — 8 Areas, received 2026-03-24.
+
+| Area | Counties | WOSR Bags | Est. Ha | Avg LR | Premium EUR/ha | Area Premium |
+|------|----------|-----------|---------|--------|---------------|-------------|
+| Area 1 | Ialomița, Călărași | 11,549 | 32,997 | 18.4% | EUR 22.97 | EUR 757,926 |
+| Area 2 | Buzău, Brăila, Galați | 12,865 | 36,757 | 14.0% | EUR 17.43 | EUR 640,845 |
+| Area 3 | Iași, Botoșani, Neamț, Suceava | 5,544 | 15,840 | 2.2% | EUR 2.72 | EUR 43,046 |
+| Area 4 | Teleorman, Giurgiu, Prahova, Argeș, Ilfov, Dâmbovița | 22,594 | 64,554 | 8.4% | EUR 10.45 | EUR 674,856 |
+| Area 5 | Olt, Vâlcea, Dolj, Mehedinți, Gorj | 5,678 | 16,223 | 9.7% | EUR 12.07 | EUR 195,740 |
+| Area 6 | Arad, Timiș, Caraș-Severin, Hunedoara | 2,585 | 7,386 | 2.7% | EUR 3.34 | EUR 24,680 |
+| Area T | Brașov, Covasna, Sibiu, Alba, Cluj, Mureș, Bistrița-Năsăud, Harghita | 2,192 | 6,263 | 1.0% | EUR 1.27 | EUR 7,943 |
+| Area 8 | Satu Mare, Bihor, Maramureș, Sălaj | 2,653 | 7,580 | 3.3% | EUR 4.07 | EUR 30,815 |
+| Area 10 | Tulcea, Constanța | 7,364 | 21,040 | 10.4% | EUR 13.01 | EUR 273,739 |
+| Area 11 | Bacău, Vaslui, Vrancea | 4,763 | 13,609 | 1.0% | EUR 1.24 | EUR 16,870 |
 
 ---
 
 ## Pending Actions (priority order)
 
-1. **Add DNS record** — `wosr.demos.digifarm.tools` CNAME → `wosr.demos.digifarm.tools.s3-website.eu-central-1.amazonaws.com` in Route53 (need DNS access).
-2. **Share new docs with Nils** — Romania v1.1 and All Countries v1.1 GDocs created 2026-03-23 (IDs above).
-3. **Send Matti email** — 35yr preliminary pricing for all 6 countries. Gmail draft ready (update from 30yr RO/MD/PL to 35yr all 6).
-4. **Get Area→county mapping** — from Nils or Alexandra Gheorghe at Corteva.
-5. **Compute 2025 data** — run Betzy jobs for all 6 countries (year=2025) to extend to 36yr.
-6. **HU seed bags** — waiting for data from Corteva HU country lead before pricing HU.
-7. **Corn/sunflower ERA5 methodology** — Nils wants same pipeline. Needs crop-specific calibration (Konstantin to design).
+1. **Share demo + docs with Nils** — demo link + methodology v1.1 GDocs + area pricing.
+2. **Send Matti email** — update draft to 35yr all 6 countries + RO area pricing.
+3. **2025 data processing** — 6 Betzy jobs submitted 2026-03-24 (IDs 1469797–1469802).
+4. **SK area pricing** — Apply same mapping as RO using SK seed bag data (just received).
+5. **HU seed bags** — waiting for data from Corteva HU country lead.
+6. **Descartes email** — Send 35yr results update.
+7. **Corn/sunflower ERA5 methodology** — Nils wants same pipeline. Needs crop-specific calibration.
 
 ---
 
