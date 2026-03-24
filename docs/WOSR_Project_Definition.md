@@ -322,9 +322,41 @@ It is important to understand that DigiFarm operates **two separate models** for
 
 Descartes has been reviewing the Docker field-level model for production readiness. The correspondence about "data mismatch" (Feb 2025) was about the difference between these two models — they are complementary, not contradictory.
 
+### Field-Level Emergence Validation Data (Lithuania)
+
+A working example of the field-level emergence detection system exists for Lithuania:
+- **File**: `digifarm emergence 2025 laukai.xls` ([GDrive](https://docs.google.com/spreadsheets/d/1QmMS7kPP-ptBzP-hMJTgXqFlc4nqWV_Q/edit))
+- **Content**: 61 fields (476.9 ha) with emergence detection dates for 2023, 2024, 2025
+- **Crop types**: Winter rapeseed (RAŽ), winter wheat (KVŽ), peas (ŽIR), beans (PUP), feed grains (PDJ), cruciferous (KRŽ), spring wheat (KVV)
+- **Data source**: NMA (Lithuanian National Paying Agency) field registry + DigiFarm satellite emergence detection
+- **Relevance**: Demonstrates the field-level emergence detection capability in production — the same system that validates claims for the WOSR guarantee
+
+This dataset is also relevant to the **sure2** (satellite assessment) and **tillage** (field monitoring) projects.
+
 ---
 
-## 13. Reinsurance and Partner Validation
+## 13. Reference Product: Mariflor Full Crop Cover Program
+
+A reference product structure from Mariflor ([GDrive presentation](https://docs.google.com/presentation/d/1waLWyb2OjyEJ2n1TNJ6UDkcBY0AUYr2D/edit)) shows how emergence fits within a broader crop insurance program:
+
+| Component | Coverage | Verification Method |
+|-----------|----------|-------------------|
+| **Emergence** | Corn: EUR 250–350/ha | NDVI Satellite |
+| **Revenue** | Full loss: -1000 EUR/ha | — |
+| **Additional Harvest Costs** | 80% of amount per index | — |
+| **Reseed** | EUR 250/ha | Photos |
+| **Crop Abandonment** | — | Photos + cooperative verification |
+
+Key program terms:
+- Overall insured limit = 50% of committed capital
+- In case of refusal, no revenue coverage
+- 2 premium payments: 30% in April, 70% in October
+
+This is relevant as a **reference architecture** for how emergence guarantees can be packaged as part of a broader crop cover program — our WOSR emergence guarantee is currently standalone, but could eventually be bundled similarly.
+
+---
+
+## 14. Reinsurance and Partner Validation
 
 ### Marsh (broker)
 - Provided Romania WOSR claims data (2020–2024) for calibration
@@ -346,7 +378,7 @@ Descartes has been reviewing the Docker field-level model for production readine
 
 ---
 
-## 14. Pending Actions
+## 15. Pending Actions
 
 ### Immediate
 1. **Share demo + docs with Nils** — demo link + methodology v1.1 GDocs
@@ -366,7 +398,7 @@ Descartes has been reviewing the Docker field-level model for production readine
 
 ---
 
-## 15. Key Reference Documents
+## 16. Key Reference Documents
 
 ### In This Repository
 | File | Purpose |
@@ -385,6 +417,9 @@ Descartes has been reviewing the Docker field-level model for production readine
 | [Definitive Actuarial Methodology (2026-01-19)](https://docs.google.com/document/d/...) | Corn methodology template that WOSR was adapted from |
 | [FARM Replanting Insurance Spec (2025-10-21)](https://docs.google.com/document/d/...) | Technical specification for the FARM platform |
 | [Frontera X & Corteva Agreement Process](https://docs.google.com/document/d/1adArxM-WN9uUGzFGHrPpocmbwN5bPzwgtEFRCyQv7tc/edit) | EUR 1.7M program structure |
+| [Mariflor Full Crop Cover Program](https://docs.google.com/presentation/d/1waLWyb2OjyEJ2n1TNJ6UDkcBY0AUYr2D/edit) | Reference product structure: emergence + revenue + reseed + crop abandonment |
+| [Lithuania Emergence Detection 2025](https://docs.google.com/spreadsheets/d/1QmMS7kPP-ptBzP-hMJTgXqFlc4nqWV_Q/edit) | Field-level emergence data: 61 fields, 476.9 ha, 2023–2025 (also relevant to sure2/tillage) |
+| [Corteva SK WOSR Sales 2025](https://docs.google.com/spreadsheets/d/1VUOWhKx8B44tABiCQotu08fShzLtXqualcsowZP4MjE/edit) | Slovakia Area→district mapping + WOSR sales data |
 
 ### External Knowledge Base
 | File | Content |
