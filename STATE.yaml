@@ -1,31 +1,46 @@
 project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 35yr historical analysis, calibrated against Marsh Romania portfolio
 status: idle
-last_save: "2026-03-24T08:30:00Z"
+last_save: "2026-03-25T00:15:00Z"
 last_state: "2026-03-24T17:45:00Z"
 session:
-  id: new-session
+  id: save-session-2026-03-25
   model: opus
   effort: high
   tmux_window: wosr
   tmux_server: default
 what_changed: |
-  - Verified RO GSheet (Morris) is complete and correct: 42 counties × 35yr, data matches local CSVs
-  - Created methodology docs v1.1 in GDrive (30yr→35yr, 1995-2024→1990-2025):
-      Romania: https://docs.google.com/document/d/1OE9yWdKWaSOiTJs_8svptg-0jmegnvSkI49VJkg2gFY
-      All Countries: https://docs.google.com/document/d/1xiDZBxmNkxX9v8_UVi5yUAsVBwHOPaxG0qoYtks7C6g
-  - Built and deployed interactive demo to s3://wosr.demos.digifarm.tools
-  - Added DNS CNAME for wosr.demos.digifarm.tools (digifarm AWS profile, Route53)
-  - Added token-based access control (?token=TqH8k66T1hTUi4GT)
-  - Demo URL: http://wosr.demos.digifarm.tools/?token=TqH8k66T1hTUi4GT
-current_task: idle — all Nils requests completed
+  - Generated RO area-level pricing: 10 Corteva Areas, 77,787 bags, 222,249 ha, EUR 2.67M total premium
+  - Area→county mapping found in "2026 Lumiposa corn.xlsx" (was blocking — now resolved)
+  - Created comprehensive project definition doc (docs/WOSR_Project_Definition.md):
+    project origin, parties, methodology, commercial structure, area pricing, all deliverables
+  - Created Romania methodology doc (docs/WOSR_Romania_Methodology.md) + GSheet reference
+  - Added Mariflor Full Crop Cover Program as reference product architecture
+  - Added Lithuania emergence data (61 fields, 2023-2025) to WOSR, sure2, and tillage projects
+  - Received SK WOSR seed bag data from Nils (GDrive)
+  - Submitted 2025 Betzy jobs — all 6 FAILED: wosr_era5_fetch.py has hardcoded year cap at 2024
+  - Nils mentioned Syngenta sunflower yield insurance meeting next Monday (separate project)
+current_task: idle
 next_steps:
-  - Share demo link and new methodology docs with Nils (token=TqH8k66T1hTUi4GT)
-  - Update Matti email draft from 30yr RO/MD/PL to 35yr all 6 countries, then send
-  - Compute 2025 data on Betzy (6 countries) to extend to 36yr
-  - Get Area→county mapping from Nils/Alexandra Gheorghe at Corteva for WOSR sales integration
+  - "Fix wosr_era5_fetch.py year range (1940-2024 → 1940-2025), re-upload to Betzy, resubmit 6 jobs"
+  - Share demo + docs + area pricing with Nils
+  - Update Matti email draft to 35yr all 6 countries + RO area pricing, then send
+  - Generate SK area pricing using newly received seed bag data
 blocked_on: null
-needs_human: "Pending outbound comms: share demo with Nils, send Matti email, get Area→county mapping"
+needs_human: "Pending outbound comms: share demo with Nils, send Matti email"
 files_touched:
+  - docs/WOSR_Project_Definition.md
+  - docs/WOSR_Romania_Methodology.md
+  - pricing/RO_area_pricing.csv
+  - pricing/RO_Area_Pricing_Report.md
+  - scripts/wosr_area_pricing.py
+  - scripts/wosr_betzy_2025.sbatch
+  - PROJECT_STATUS.md
   - STATE.yaml
-long_running: []
+long_running:
+  - type: hpc
+    job_id: "1469797-1469802"
+    cluster: betzy
+    status: failed
+    submitted: "2026-03-24T14:18:00Z"
+    eta: "Need to fix year range in wosr_era5_fetch.py and resubmit"
