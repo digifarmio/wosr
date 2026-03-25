@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-DigiFarm is building a **parametric climate insurance** product for Winter Oilseed Rape (WOSR) emergence risk. The product is designed for **Corteva Agriscience** seed sales across Central and Eastern Europe, brokered through **Frontera Ag** and reinsured by **Descartes Underwriting**.
+Corteva wants to launch a Winter Oilseed Rape (WOSR) version of the Emergence Guarantee™ program - a similar product structure we built for corn in Romania - across Romania and potentially six additional Central and Eastern European (CEE) countries. Frontera X and DigiFarm is responsible for building the actuarial methodology, historical loss analysis, and satellite-based emergence detection system to underpin this product.
 
 The core idea: when a farmer buys Corteva WOSR seed, an emergence guarantee is bundled into the seed bag price. If climate conditions during the critical sowing/emergence window cause poor establishment (<20 plants/m²), the farmer receives an automatic payout — no field inspection needed.
 

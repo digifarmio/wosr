@@ -4,7 +4,7 @@
 
 **Parametric climate insurance for Winter Oilseed Rape (WOSR) emergence risk**, bundled into Corteva seed bag sales across Central and Eastern Europe.
 
-When a farmer buys Corteva WOSR seed, an emergence guarantee is automatically included. If climate conditions during the critical autumn sowing window prevent proper crop establishment (<20 plants/m²), the farmer receives an automatic payout — no field inspection, no claims adjuster. The trigger is a climate index computed from satellite-era weather reanalysis data.
+When a farmer buys Corteva WOSR seed, an emergence guarantee is automatically included. If climate conditions during the critical autumn sowing window prevent proper crop establishment (<20 plants/m²), the farmer receives an automatic payout — without reliance on traditional field loss adjustment processes. The trigger is a climate index computed from satellite-era weather reanalysis data.
 
 **This is not traditional insurance.** It is a parametric guarantee: payouts are triggered by objective, third-party climate data (ERA5-Land from Copernicus/ECMWF), not by on-farm loss assessment. This structure avoids insurance regulation (critical for Corteva's accounting treatment) while providing real crop protection.
 
@@ -16,12 +16,12 @@ When a farmer buys Corteva WOSR seed, an emergence guarantee is automatically in
 
 The WOSR program extends an existing **corn emergence guarantee** that DigiFarm/Frontera built for Corteva Romania in 2025:
 
-- **Jul–Nov 2025**: DigiFarm and Marsh (insurance broker) developed a 30-year historical loss ratio model for corn replanting risk in Romania, using county-level climate data
+- **Jul–Nov 2025**: DigiFarm and Marsh (insurance broker) developed a 35-year historical loss ratio model for corn replanting risk in Romania, using county-level climate data
 - **Sep 2025**: Premium pricing exercises with Marsh, Munich Re as potential reinsurer
-- **Oct 2025**: FARM Replanting Insurance Specification finalized; Corteva pilot agreed for Romania 2026 (100,000 ha, Lumiposa-treated hybrids)
+- **Oct 2025**: FARM Replanting Insurance Specification finalized; Corteva pilot agreed for Romania 2026 (100,000 ha, Lumiposa-treated corn hybrids)
 - **Nov 2025**: Descartes Underwriting joined as validation/underwriting partner
-- **Dec 2025**: Fronterax Technologies S.L. acquired DigiFarm AS (EUR 4M SPA signed 2025-12-31)
-- **Jan 2026**: Definitive Actuarial Methodology documents produced (multiple versions); Emergence Guarantee Agreement drafts circulated (USD 450K program fee)
+- **Dec 2025**: Fronterax Technologies S.L. merged with DigiFarm AS
+- **Jan 2026**: Definitive Actuarial Methodology documents produced (multiple versions); Emergence Guarantee Agreement drafts circulated
 - **Feb 2026**: Activation guides, claims submission guides, and one-pagers produced in English and Romanian
 
 ### Expansion to WOSR (March 2026)
@@ -42,13 +42,13 @@ The WOSR model was built in 48 hours (Mar 10–11), validated against Marsh Roma
 
 | Party | Role | Key People |
 |-------|------|------------|
-| **DigiFarm AS** | Technology provider — builds the climate model, validation platform, and analytics | Konstantin Varik (CTO), Morris Warachi (engineer) |
-| **Frontera Ag** | Commercial partner — coordinates with Corteva, manages the insurance program | Matti Tiainen |
-| **Fronterax Technologies S.L.** | Parent company (acquired DigiFarm Dec 2025) | Nils Helset (CEO) |
-| **Corteva Agriscience** | Seed company — bundles guarantee into seed bag price, pays program fee | Alexandra Gheorghe (RO), country leads per market |
-| **Marsh** | Insurance broker — structured the original corn program, provided Romania claims data for calibration | Horatiu Udroiu (Vara Ag/Marsh broker) |
+| **DigiFarm AS** | Technology provider — builds the climate model, validation platform, and analytics | Konstantin Varik (CTO), Nils Helset (Co-CEO), Morris Warachi (engineer) |
+| **Frontera Ag** | Commercial partner — coordinates with Corteva, manages the insurance program | Matti Tiainen (Co-CEO) |
+| **Fronterax Technologies S.L.** | Parent company (merged with DigiFarm Dec 2025) | Nils Helset (Co-CEO) |
+| **Corteva Agriscience** | Seed company — bundles guarantee into seed bag price, pays program fee | Alexandra Gheorghe (RO), Sergii Kharin (country lead Romania and Moldova), country leads per market |
+| **Marsh** | Insurance structuring support and support of historical Romania claims data for calibration | Horatiu Regep |
 | **Descartes Underwriting** | Reinsurance/validation partner — reviews methodology, provides underwriting capacity | Antoine, Etienne Selles |
-| **Munich Re / Hannover Re** | Potential reinsurers — referenced in program structure discussions | — |
+| **Descartes Underwriting (Generali) and Liberty Mutual** | Potential reinsurers | — |
 
 ---
 
@@ -79,8 +79,8 @@ The WOSR model was built in 48 hours (Mar 10–11), validated against Marsh Roma
   - `total_precipitation` — Crust formation trigger
   - `snow_depth_water_equivalent` — Snow protection for frost
 
-### Marsh Romania Claims Data (calibration)
-- **Source**: Marsh/Vara Ag, provided during Jul–Nov 2025 pricing discussions
+### Historical Romania WOSR Claims Dataset (calibration)
+- **Source**: historical Romania WOSR claims dataset provided during 2025 pricing discussions
 - **Content**: Romania WOSR portfolio long-term loss ratio: **8.4%** at approximately 10 drought days
 - **Use**: Calibration anchor for the sigmoid ELF model (CF = 0.3589)
 - **GDrive references**: `Frontera Ag | Corn, WOSR and Sunflower Historical Payouts Exercise 2020-2024 | Romania V5 Final`, `Final Model | Frontera | Marsh Romania WOSR 18.08.2025 V5`
@@ -202,15 +202,26 @@ The difference is **portfolio composition bias**: the Marsh 12.66% comes from ~2
 
 ## 7. Commercial Structure
 
-Based on the Frontera X & Corteva Agreement Process document (Nov 2025):
+The WOSR program is intended to follow the same structural logic as the Romania corn Emergence Guarantee program, while remaining subject to crop-specific commercial agreement terms.
 
-- **Program fee**: EUR/USD 450,000 (2026 season, Romania corn — WOSR TBD)
-- **Broader structure**: EUR 1,700,000 (Option A — validated approach)
-- **Corteva's role**: Bundles guarantee into seed price, delivers in-kind farmer benefits
-- **DigiFarm's role**: Validates claims via FARM platform, provides analytics
-- **Reinsurance**: Descartes Underwriting provides capacity; Corteva as beneficiary
-- **Regulatory**: Structured as parametric guarantee (non-insurance) to avoid regulatory classification
-- **Liability cap**: DigiFarm capped at EUR 1,700,000 per season
+Under the Romania corn service agreement model:
+- Corteva is the sole party offering the emergence guarantee to farmers and remains solely responsible for all farmer-facing benefits.
+- DigiFarm provides the technical platform, satellite analytics, agronomic data services, and validation infrastructure.
+- Fronterax provides claims-handling support services and a capped performance-based compensation layer to Corteva.
+- Farmers do not pay a separate premium or fee for participation; the guarantee is embedded in the Corteva commercial offer.
+- Farmer compensation is provided in kind (replacement treated seed or equivalent), not in cash.
+
+Financial structure of the Romania corn reference agreement:
+- Program Fee: USD 450,000 paid by Corteva to DigiFarm for platform access, imagery, analytics, technical support, and claims-support tooling.
+- Corteva Risk Threshold: Corteva retains the first USD 1,000,000 of validated claims.
+- Fronterax Compensation Cap: Fronterax compensates Corteva for validated claims above USD 1,000,000, up to USD 2,000,000.
+- Aggregate Program Limit: USD 3,000,000 total supported program exposure.
+
+This creates a two-layer commercial structure:
+1. a fixed service fee for the technology and support layer; and
+2. a capped risk-sharing mechanism between Corteva and Fronterax.
+
+For WOSR, the same architecture is assumed as the starting point for commercial design, but final fee levels, risk thresholds, compensation caps, and product wording remain to be agreed for the WOSR program specifically.
 
 ### Premium Flow (WOSR Romania, estimated)
 
@@ -392,10 +403,10 @@ This is relevant as a **reference architecture** for how emergence guarantees ca
 ## 14. Reinsurance and Partner Validation
 
 ### Marsh (broker)
-- Provided Romania WOSR claims data (2020–2024) for calibration
+- Insurance structuring support and provision of historical Romania WOSR claims data for calibration
 - Conducted pricing exercises (Aug–Nov 2025)
 - Introduced Munich Re as potential reinsurer
-- Key contact: Horatiu Udroiu (Vara Ag / Marsh Romania)
+- Key contact: Horatiu Regep
 - GDrive: `Final Model | Frontera | Marsh Romania WOSR 18.08.2025 V5`
 
 ### Descartes Underwriting (validation)
