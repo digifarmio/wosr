@@ -1,36 +1,56 @@
 project: wosr
-goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 35yr historical analysis, calibrated against Marsh Romania portfolio
-status: idle
-last_save: "2026-03-25T00:15:00Z"
+goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 36yr historical analysis, calibrated against Marsh Romania portfolio
+status: active
+last_save: "2026-03-25T18:00:00Z"
 last_state: "2026-03-25T12:30:00Z"
 session:
-  id: state-session-2026-03-25b
+  id: save-session-2026-03-25b
   model: opus
   effort: high
   tmux_window: wosr
   tmux_server: default
 what_changed: |
-  - Generated RO area-level pricing: 10 Corteva Areas, 77,787 bags, 222,249 ha, EUR 2.67M total premium
-  - Area→county mapping found in "2026 Lumiposa corn.xlsx" (was blocking — now resolved)
-  - Created comprehensive project definition doc (docs/WOSR_Project_Definition.md)
-  - Created Romania methodology doc (docs/WOSR_Romania_Methodology.md)
-  - Added Mariflor + Lithuania emergence references
-  - Received SK WOSR seed bag data from Nils
-  - 2025 Betzy jobs FAILED: wosr_era5_fetch.py year cap at 2024
-current_task: idle
+  Major session — all deliverables updated for Nils/Matti/Horatiu:
+  - Fixed ERA5 fetch year range (2024→2025), resubmitted — all 6 countries 2025 data complete (36yr)
+  - Generated SK area pricing (8 Corteva areas, 4,282 bags, EUR 8.8K portfolio)
+  - Alignment check: GDocs vs repo — core numbers match, documented pricing divergence (11% vs 6.1%)
+  - Added 4 spring perils to pipeline (spring frost, hail, storm, spring drought) — Betzy jobs running
+  - Enabled HTTPS for demo via CloudFront (ETZ3MP8UA6WSQ, *.demos.digifarm.tools cert)
+  - Incorporated all of Nils's editorial changes to both MD docs:
+    - "acquired"→"merged", added Sergii Kharin, corrected Horatiu Regep
+    - Detailed commercial structure (corn reference model with risk thresholds/caps)
+    - De-emphasized Marsh branding
+  - Created WOSR Excel in Horatiu's corn format (4 sheets, 42 counties × 36yr)
+  - Uploaded Excel to GDrive (ID: 1YLRwon_es8ZghxtvaP9HPIx14Vd0MaDW)
+  - Reformatted Romania GSheet to match corn format + added 2025 data + national summary sheet
+  - Drafted and sent status message to Nils (via bot DM; also provided for Konstantin to paste)
+current_task: idle — spring peril jobs running on Betzy (resubmitted, ~4yr/24h per country)
 next_steps:
-  - "Fix wosr_era5_fetch.py year range (1940-2024 → 1940-2025), re-upload to Betzy, resubmit 6 jobs"
-  - Share demo + docs + area pricing with Nils
-  - Update Matti email draft to 35yr all 6 countries + RO area pricing, then send
-  - Generate SK area pricing using newly received seed bag data
+  - Monitor spring peril Betzy jobs (1471328-1471333) — will need multiple resubmissions (~8 rounds)
+  - Once spring perils complete, regenerate analysis/pricing/GSheet/Excel with Full Package v2
+  - Update dashboard with 36yr data + new format
+  - Send final Matti email with all 6 countries + area pricing
+  - 3lc.ai question from Nils — check if Konstantin remembers Oct 2025 meeting
 blocked_on: null
-needs_human: "Pending outbound comms: share demo with Nils, send Matti email"
+needs_human: "Nils asked about 3lc.ai meeting (Oct 2025) — Konstantin needs to answer"
 files_touched:
+  - docs/WOSR_Project_Definition.md
+  - docs/WOSR_Romania_Methodology.md
+  - pricing/WOSR_Historical_Payouts_Exercise_36yr_Romania.xlsx
+  - pricing/SK_area_pricing.csv
+  - pricing/SK_Area_Pricing_Report.md
+  - pricing/RO_area_pricing.csv
+  - scripts/wosr_spring_perils.py
+  - scripts/wosr_betzy_spring.sbatch
+  - scripts/wosr_betzy_2025.sbatch
+  - scripts/wosr_era5_fetch.py
+  - scripts/wosr_sk_area_pricing.py
+  - PROJECT_STATUS.md
   - STATE.yaml
 long_running:
   - type: hpc
-    job_id: "1469797-1469802"
+    job_id: "1471328-1471333"
     cluster: betzy
-    status: failed
-    submitted: "2026-03-24T14:18:00Z"
-    eta: "Need to fix year range in wosr_era5_fetch.py and resubmit"
+    status: running
+    submitted: "2026-03-25T17:00:00Z"
+    eta: "~8 resubmission rounds needed, ~4-5 years processed per 24h job. Expect ~1 week total."
