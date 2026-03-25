@@ -2,9 +2,9 @@ project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 35yr historical analysis, calibrated against Marsh Romania portfolio
 status: idle
 last_save: "2026-03-25T00:15:00Z"
-last_state: "2026-03-24T17:45:00Z"
+last_state: "2026-03-25T12:30:00Z"
 session:
-  id: save-session-2026-03-25
+  id: state-session-2026-03-25b
   model: opus
   effort: high
   tmux_window: wosr
@@ -12,14 +12,11 @@ session:
 what_changed: |
   - Generated RO area-level pricing: 10 Corteva Areas, 77,787 bags, 222,249 ha, EUR 2.67M total premium
   - Area→county mapping found in "2026 Lumiposa corn.xlsx" (was blocking — now resolved)
-  - Created comprehensive project definition doc (docs/WOSR_Project_Definition.md):
-    project origin, parties, methodology, commercial structure, area pricing, all deliverables
-  - Created Romania methodology doc (docs/WOSR_Romania_Methodology.md) + GSheet reference
-  - Added Mariflor Full Crop Cover Program as reference product architecture
-  - Added Lithuania emergence data (61 fields, 2023-2025) to WOSR, sure2, and tillage projects
-  - Received SK WOSR seed bag data from Nils (GDrive)
-  - Submitted 2025 Betzy jobs — all 6 FAILED: wosr_era5_fetch.py has hardcoded year cap at 2024
-  - Nils mentioned Syngenta sunflower yield insurance meeting next Monday (separate project)
+  - Created comprehensive project definition doc (docs/WOSR_Project_Definition.md)
+  - Created Romania methodology doc (docs/WOSR_Romania_Methodology.md)
+  - Added Mariflor + Lithuania emergence references
+  - Received SK WOSR seed bag data from Nils
+  - 2025 Betzy jobs FAILED: wosr_era5_fetch.py year cap at 2024
 current_task: idle
 next_steps:
   - "Fix wosr_era5_fetch.py year range (1940-2024 → 1940-2025), re-upload to Betzy, resubmit 6 jobs"
@@ -29,13 +26,6 @@ next_steps:
 blocked_on: null
 needs_human: "Pending outbound comms: share demo with Nils, send Matti email"
 files_touched:
-  - docs/WOSR_Project_Definition.md
-  - docs/WOSR_Romania_Methodology.md
-  - pricing/RO_area_pricing.csv
-  - pricing/RO_Area_Pricing_Report.md
-  - scripts/wosr_area_pricing.py
-  - scripts/wosr_betzy_2025.sbatch
-  - PROJECT_STATUS.md
   - STATE.yaml
 long_running:
   - type: hpc

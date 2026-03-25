@@ -1,0 +1,9 @@
+area,kraje,n_kraje,n_districts,wosr_sales_bags,est_hectares,avg_lr_std_pct,avg_lr_full_pct,avg_premium_eur_ha,area_total_premium_eur,worst_kraj,worst_kraj_lr_pct
+Area 1,Banskobystrický + Nitriansky + Trenčiansky + Žilinský,4,18,705,2014,0.42,5.64,0.52,1056,Nitriansky,0.65
+Area 2,Nitriansky + Trnavský,2,2,448,1280,0.62,5.86,0.77,990,Nitriansky,0.65
+Area 3,Košický + Prešovský,2,6,695,1986,0.34,5.75,0.43,855,Košický,0.36
+Area 4,Nitriansky,1,2,488,1394,0.65,6.08,0.81,1131,Nitriansky,0.65
+Area 5,Nitriansky + Trnavský,2,4,311,889,0.62,5.86,0.77,688,Nitriansky,0.65
+Area 6,Banskobystrický + Košický + Žilinský,3,15,446,1274,0.34,5.55,0.42,541,Košický,0.36
+Area 7,Bratislavský + Trenčiansky + Trnavský,3,10,625,1786,1.28,7.04,1.6,2860,Bratislavský,2.89
+Area 8,Košický + Prešovský + Žilinský,3,14,564,1611,0.34,5.67,0.42,684,Košický,0.36

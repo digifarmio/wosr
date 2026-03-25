@@ -95,8 +95,8 @@ def main():
                         help="CDS API key (defaults to ~/.cdsapirc)")
     args = parser.parse_args()
 
-    if args.year < 1995 or args.year > 2024:
-        sys.exit(f"Year must be 1995–2024, got {args.year}")
+    if args.year < 1940 or args.year > 2025:
+        sys.exit(f"Year must be 1940–2025, got {args.year}")
 
     bbox = COUNTRY_BBOX[args.country]
     out_dir = Path(args.output_dir)

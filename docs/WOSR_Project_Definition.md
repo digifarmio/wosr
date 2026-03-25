@@ -165,6 +165,39 @@ Premium    = LR_pricing × EUR 96/ha × 1.30             (sum insured × loading
 - **1.30**: 30% commercial loading (expenses, brokerage, risk margin)
 - **60/40 blend**: Overweights recent climate (increasing drought trend)
 
+### Peril Coverage Gap: ERA5 Pipeline vs GDoc Methodology
+
+The GDoc actuarial methodology describes **6 perils**. The ERA5 pipeline currently computes **2 of 6**:
+
+| Peril | GDoc LR Estimate | ERA5 Pipeline | ERA5 Variables Needed |
+|-------|-----------------|---------------|----------------------|
+| Autumn drought + crust | 8.4% | **Computed** | `swvl1`, `total_precipitation` (already fetched) |
+| Winter frost | 4.5% | **Computed** | `2m_temperature`, `snow_depth_water_equivalent` (already fetched) |
+| Spring frost | 2.0% | Not computed | `2m_temperature` — already fetched, extend window to Apr |
+| Hail | 1.5% | Not computed | `CAPE`, wind shear — **not currently fetched** |
+| Storm / lodging | 1.0% | Not computed | `10fg` (10m wind gust) — **not currently fetched** |
+| Spring vegetation drought | 2.0% | Not computed | `swvl1` + `swvl2` — extend window to Jun |
+
+**Why**: The pipeline was built for the Mar 11 deadline, prioritizing the Standard Package (autumn drought — the dominant peril). The GDoc Full Package estimates (spring frost, hail, storm, spring drought) are actuarial estimates based on ERA5 climatology and literature, not computed from the pipeline. To close this gap:
+
+- **Spring frost + spring drought** (4.0% combined): Achievable with current ERA5 variables by extending the fetch window
+- **Hail + storm** (2.5% combined): Requires fetching new ERA5 variables (`CAPE`, `10fg`)
+
+### Reconciliation: GDoc National LR (11%) vs ERA5 Computed (6.1%)
+
+The GDoc states a **national pricing LR of 11.0%** for the Standard Package. Our ERA5 pipeline computes a **national average of 6.1%**. These are not contradictory — they measure different things:
+
+| Metric | Value | Method |
+|--------|-------|--------|
+| GDoc pricing LR | **11.0%** | `60% × 12.66% (Marsh 5yr claims) + 40% × 8.4% (Marsh long-term anchor)` |
+| ERA5 national avg | **6.1%** | Equal-weight average of 42 county LRs (35yr ERA5 Standard) |
+| ERA5 portfolio-weighted | **~8–9%** | If weighted by Corteva Area sales (Zone 1 heavy), closer to Marsh |
+
+The difference is **portfolio composition bias**: the Marsh 12.66% comes from ~200K insured hectares concentrated in Zone 1 (Călărași, Brăila, Dolj, Tulcea — high drought risk). The ERA5 6.1% equally weights all 42 counties including 14 low-risk Zone 3 counties. The GDoc itself notes this (Section 8.2): *"A nationally proportional portfolio would produce an estimated loss ratio approximately 2–3 percentage points lower."*
+
+**For pricing individual counties**: Use the ERA5 county-level data (the GSheet and `pricing/` CSVs) — these are precise per-county.
+**For national portfolio quotes**: Use the GDoc's 11% for the Corteva/Marsh-like portfolio, or compute a sales-weighted average from our area pricing.
+
 ---
 
 ## 7. Commercial Structure
