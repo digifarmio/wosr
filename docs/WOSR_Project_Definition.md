@@ -287,7 +287,7 @@ GDrive folder: https://drive.google.com/drive/folders/1_lxwoAFUrmV7yEWQ2HS0tlomV
 | Romania Methodology (repo) | https://github.com/digifarmio/wosr/blob/main/docs/WOSR_Romania_Methodology.md |
 
 ### Interactive Demo
-- **URL**: http://wosr.demos.digifarm.tools/?token=TqH8k66T1hTUi4GT
+- **URL**: https://wosr.demos.digifarm.tools/?token=TqH8k66T1hTUi4GT
 - 6-country tabs, year slider, sortable LR table with heat colors, Chart.js trends
 
 ---

@@ -98,10 +98,9 @@ Key changes: year range 1995→1990, "30-year"→"35-year", added ERA5 35yr nati
 ## Interactive Demo
 
 **S3:** `s3://wosr.demos.digifarm.tools/` (deployed 2026-03-23)
-**URL:** http://wosr.demos.digifarm.tools.s3-website.eu-central-1.amazonaws.com/ ✅ working
-
-**DNS pending:** Add Route53 CNAME: `wosr.demos.digifarm.tools` → `wosr.demos.digifarm.tools.s3-website.eu-central-1.amazonaws.com`
-(Same pattern as tillage-demo.digifarm.tools — no CloudFront needed for MVP)
+**URL:** https://wosr.demos.digifarm.tools/?token=TqH8k66T1hTUi4GT
+**CloudFront:** `ETZ3MP8UA6WSQ` → `d30ztb45efti25.cloudfront.net` (HTTPS, deployed 2026-03-25)
+**Cert:** `*.demos.digifarm.tools` wildcard (ACM us-east-1)
 
 Features: 6-country tabs, year slider 1990–2024, sortable LR table with heat colors, Chart.js historical trend, Historical Average mode with P90 column.
 
