@@ -1,56 +1,35 @@
 project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 36yr historical analysis, calibrated against Marsh Romania portfolio
 status: active
-last_save: "2026-03-25T18:00:00Z"
+last_save: "2026-03-26T00:30:00Z"
 last_state: "2026-03-25T12:30:00Z"
 session:
-  id: save-session-2026-03-25b
+  id: save-session-2026-03-26
   model: opus
   effort: high
   tmux_window: wosr
   tmux_server: default
 what_changed: |
-  Major session — all deliverables updated for Nils/Matti/Horatiu:
-  - Fixed ERA5 fetch year range (2024→2025), resubmitted — all 6 countries 2025 data complete (36yr)
-  - Generated SK area pricing (8 Corteva areas, 4,282 bags, EUR 8.8K portfolio)
-  - Alignment check: GDocs vs repo — core numbers match, documented pricing divergence (11% vs 6.1%)
-  - Added 4 spring perils to pipeline (spring frost, hail, storm, spring drought) — Betzy jobs running
-  - Enabled HTTPS for demo via CloudFront (ETZ3MP8UA6WSQ, *.demos.digifarm.tools cert)
-  - Incorporated all of Nils's editorial changes to both MD docs:
-    - "acquired"→"merged", added Sergii Kharin, corrected Horatiu Regep
-    - Detailed commercial structure (corn reference model with risk thresholds/caps)
-    - De-emphasized Marsh branding
-  - Created WOSR Excel in Horatiu's corn format (4 sheets, 42 counties × 36yr)
-  - Uploaded Excel to GDrive (ID: 1YLRwon_es8ZghxtvaP9HPIx14Vd0MaDW)
-  - Reformatted Romania GSheet to match corn format + added 2025 data + national summary sheet
-  - Drafted and sent status message to Nils (via bot DM; also provided for Konstantin to paste)
-current_task: idle — spring peril jobs running on Betzy (resubmitted, ~4yr/24h per country)
+  Continuation of 2026-03-25 session:
+  - Sent draft status message to Nils (bot DM + text for Konstantin to paste)
+  - Nils confirmed he can send Standard Package to Horatiu now
+  - Clarified: Standard Package LR is final, Full Package will update after spring perils
+  - Spring peril Betzy jobs: round 2 completed (~40-45% done), round 3 submitted (1471424-1471429)
+current_task: "Spring peril HPC jobs running (round 3 of ~5-6)"
 next_steps:
-  - Monitor spring peril Betzy jobs (1471328-1471333) — will need multiple resubmissions (~8 rounds)
-  - Once spring perils complete, regenerate analysis/pricing/GSheet/Excel with Full Package v2
+  - Monitor spring peril jobs — resubmit when wall-timed (~4-5 more rounds)
+  - Once spring perils complete, regenerate Full Package analysis/GSheet/Excel/dashboard
   - Update dashboard with 36yr data + new format
-  - Send final Matti email with all 6 countries + area pricing
-  - 3lc.ai question from Nils — check if Konstantin remembers Oct 2025 meeting
+  - Send Matti email (36yr all 6 countries + area pricing)
+  - Answer Nils re 3lc.ai meeting
 blocked_on: null
 needs_human: "Nils asked about 3lc.ai meeting (Oct 2025) — Konstantin needs to answer"
 files_touched:
-  - docs/WOSR_Project_Definition.md
-  - docs/WOSR_Romania_Methodology.md
-  - pricing/WOSR_Historical_Payouts_Exercise_36yr_Romania.xlsx
-  - pricing/SK_area_pricing.csv
-  - pricing/SK_Area_Pricing_Report.md
-  - pricing/RO_area_pricing.csv
-  - scripts/wosr_spring_perils.py
-  - scripts/wosr_betzy_spring.sbatch
-  - scripts/wosr_betzy_2025.sbatch
-  - scripts/wosr_era5_fetch.py
-  - scripts/wosr_sk_area_pricing.py
-  - PROJECT_STATUS.md
   - STATE.yaml
 long_running:
   - type: hpc
-    job_id: "1471328-1471333"
+    job_id: "1471424-1471429"
     cluster: betzy
     status: running
-    submitted: "2026-03-25T17:00:00Z"
-    eta: "~8 resubmission rounds needed, ~4-5 years processed per 24h job. Expect ~1 week total."
+    submitted: "2026-03-26T00:20:00Z"
+    eta: "~40-45% done. ~3-4 more rounds needed. Expect completion ~Mar 28-29."
