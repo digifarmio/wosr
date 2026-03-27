@@ -1,35 +1,51 @@
 project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 36yr historical analysis, calibrated against Marsh Romania portfolio
 status: active
-last_save: "2026-03-26T00:30:00Z"
-last_state: "2026-03-25T12:30:00Z"
+last_save: "2026-03-27T06:00:00Z"
+last_state: "2026-03-26T12:00:00Z"
 session:
-  id: save-session-2026-03-26
-  model: opus
-  effort: high
+  id: save-session-2026-03-27
+  model: sonnet
+  effort: medium
   tmux_window: wosr
   tmux_server: default
 what_changed: |
-  Continuation of 2026-03-25 session:
-  - Sent draft status message to Nils (bot DM + text for Konstantin to paste)
-  - Nils confirmed he can send Standard Package to Horatiu now
-  - Clarified: Standard Package LR is final, Full Package will update after spring perils
-  - Spring peril Betzy jobs: round 2 completed (~40-45% done), round 3 submitted (1471424-1471429)
-current_task: "Spring peril HPC jobs running (round 3 of ~5-6)"
+  Session 2026-03-26 (context-compacted, recovered):
+  - Updated demo to multi-token access: 3 tokens (original, Horatiu, Matti)
+    - Original: TqH8k66T1hTUi4GT (Nils/Konstantin)
+    - Horatiu: Hr9mK3pLsQwX5nBv
+    - Matti: Mt7cJ2vRdYeZ4kAq
+  - Uploaded updated index.html to s3://wosr.demos.digifarm.tools/index.html
+  - CloudFront invalidation blocked (IAM lacks cloudfront:CreateInvalidation)
+  - Prepared Slack draft to Nils (demo links + methodology docs + GSheet ack + spring ETA)
+    — NOT SENT, awaiting Konstantin's confirmation
+  Session 2026-03-27:
+  - Spring peril jobs 1471424-1471429 still running (15h48m / 24h)
+  - Progress: RO/HU/MD/SK ~year 2008-2009, PL/CZ ~year 2010 (50-55% done)
+  - All 6 countries have 36/36 regular (non-spring) years complete in results/
+  - Conducted methodology validation: zero incorrect LR values; 4 flags for reinsurer delivery
+  - Built Excel in Horatiu/corn format (committed 0ef0809)
+current_task: "Spring peril HPC jobs running (round 3 of ~5-6) — ~50-55% done, wall-times ~2026-03-27 16:00 UTC"
 next_steps:
-  - Monitor spring peril jobs — resubmit when wall-timed (~4-5 more rounds)
-  - Once spring perils complete, regenerate Full Package analysis/GSheet/Excel/dashboard
-  - Update dashboard with 36yr data + new format
+  - Resubmit spring peril jobs when wall-timed (ETA ~16:00 UTC today) — 1-2 more rounds
+  - Send Slack to Nils: demo links (Horatiu + Matti) + methodology docs + GSheet ack
+  - Fix validation FLAG 4: reconcile premium €7.56 computed vs €5.81 stated before reinsurer delivery
+  - Fix validation FLAG 3: document 6.1% LR = zone-weighted (Z1+Z2), not equal-weight
+  - Once spring perils complete: regenerate Full Package analysis/GSheet/Excel/dashboard
   - Send Matti email (36yr all 6 countries + area pricing)
   - Answer Nils re 3lc.ai meeting
 blocked_on: null
-needs_human: "Nils asked about 3lc.ai meeting (Oct 2025) — Konstantin needs to answer"
+needs_human: |
+  - Confirm Slack draft to Nils (demo links + docs) — draft ready, not sent
+  - Nils asked about 3lc.ai meeting (Oct 2025) — Konstantin needs to answer
+  - Clarify premium calc: which LR_5yr/LR_35yr inputs produce €5.81/ha stated in methodology?
 files_touched:
   - STATE.yaml
+  - s3://wosr.demos.digifarm.tools/index.html (multi-token update)
 long_running:
   - type: hpc
     job_id: "1471424-1471429"
     cluster: betzy
     status: running
     submitted: "2026-03-26T00:20:00Z"
-    eta: "~40-45% done. ~3-4 more rounds needed. Expect completion ~Mar 28-29."
+    eta: "~50-55% done (RO/HU/MD/SK year ~2008-2009, PL/CZ ~2010). Wall-times ~16:00 UTC 2026-03-27. ~1-2 more rounds after. Expect completion ~Mar 28."
