@@ -1,46 +1,50 @@
 project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 36yr historical analysis, calibrated against Marsh Romania portfolio
 status: active
-last_save: "2026-03-27T14:30:00Z"
+last_save: "2026-03-27T17:15:00Z"
 last_state: "2026-03-27T06:35:00Z"
 session:
-  id: save-session-2026-03-27b
+  id: save-session-2026-03-27c
   model: sonnet
   effort: medium
   tmux_window: wosr
   tmux_server: default
 what_changed: |
-  Session 2026-03-27 (continued):
-  - Validated ERA5 model vs Marsh actual claims (2019-2024, 6 years from Horatiu's data)
-  - Key finding: ERA5 Full Package avg (13.50%) ≈ Marsh actual avg (14.3%) for 2019-2024
-  - ERA5 Standard avg (8.46%) undershoots — expected, covers drought only
-  - 2019 biggest gap: ERA5 Full 21.6% vs Marsh 30.0% — compound year, spring perils should close gap
-  - Confirmed: Marsh actuals include ALL perils (full crop cycle), not just autumn
-  - Implication: after spring perils added, CF may need recalibration downward to avoid overshooting
-  - Horatiu's "13-14%" expectation = 2019-2024 avg (includes 2019 disaster year at 30%)
-  - Corrected earlier error: the "13.1% ERA5 avg" quoted from V5 comparison was wrong
-  - Actual ERA5 2020-2023 avg: Standard 6.24%, Full 11.29% (not 13.1%)
-  - Could not access Nils's SUNROM methodology doc (1HWkK8WG9zXiTP0KDjHB5kIXuxDNqAeyx1gwIoRWaJLs) — Google auth wall
-current_task: "Spring peril HPC jobs running (round 3) — wall-times ~2026-03-27 16:00 UTC"
+  Session 2026-03-27 (final save):
+  - Validated ERA5 Full Package vs Marsh actuals (2019-2024): 13.50% vs 14.3% — strong match
+  - Confirmed Marsh actuals = all perils (full crop cycle, autumn+spring)
+  - After spring perils added, CF recalibration needed to avoid overshooting
+  - Spring peril jobs 1471424-1471429 wall-timed at year ~2010-2013
+  - Resubmitted round 4: jobs 1474289-1474294
+  - Nils forwarded Corteva (David) request: WOSR planted area by county for autumn 2025
+  - Conclusion: can't estimate accurately until mid-May (WOSR flowering, Sentinel-2 classification)
+  - INSSE won't have 2025 data yet either
+  - Sent Slack to Nils: area estimation timeline + Monday call suggestion + spring peril ETA
+  - Slack msg: https://digifarming.slack.com/archives/DE0159YCA/p1774617750238169
+  - Wrote calibration validation to dpro inbox
+current_task: "Spring peril HPC jobs round 4 running (1474289-1474294)"
 next_steps:
-  - Resubmit spring peril jobs when wall-timed (~16:00 UTC today) — 1-2 more rounds
-  - Once spring perils complete: recalibrate CF so Full Package aligns with Marsh 14.3% avg
-  - Regenerate Full Package analysis/GSheet/Excel/dashboard with spring perils
-  - Review Nils's SUNROM methodology doc (needs content pasted or exported)
-  - Send Slack to Nils (demo links + methodology docs) — draft still pending confirmation
+  - Monitor spring peril jobs 1474289-1474294 — should reach year ~2023-2025, possibly completing
+  - If wall-timed again, resubmit round 5 (final)
+  - Once spring perils complete: recalibrate CF so Full Package ≈ Marsh 14.3% avg (2019-2024)
+  - Regenerate Full Package analysis/GSheet/Excel/dashboard with spring perils + recalibrated CF
+  - Pull INSSE historical rapeseed area by county for Romania (baseline for Monday call)
+  - Review Nils's SUNROM methodology doc (needs content pasted/exported)
+  - Send demo links to Nils for Horatiu + Matti (draft was ready — still unsent)
   - Send Matti email (36yr all 6 countries + area pricing)
+  - WOSR area estimation: plan satellite classification pipeline for mid-May
 blocked_on: null
 needs_human: |
-  - Confirm Slack draft to Nils (demo links + docs)
-  - Nils's SUNROM doc needs to be pasted/exported for review
   - Nils asked about 3lc.ai meeting (Oct 2025) — Konstantin needs to answer
-  - After spring perils: decide on CF recalibration target
+  - SUNROM doc needs content pasted or exported for review
+  - After spring perils: confirm CF recalibration target
 files_touched:
   - STATE.yaml
+  - /home/ubuntu/dpro/inbox/wosr_calibration_validation.md
 long_running:
   - type: hpc
-    job_id: "1471424-1471429"
+    job_id: "1474289-1474294"
     cluster: betzy
     status: running
-    submitted: "2026-03-26T00:20:00Z"
-    eta: "~55% done (year ~2008-2010 of 1990-2025). Wall-times ~16:00 UTC 2026-03-27. ~1-2 more rounds. Expect completion ~Mar 28."
+    submitted: "2026-03-27T15:00:00Z"
+    eta: "Round 4 of ~5. Should reach year ~2023-2025. If completes: done. If wall-times: 1 more round. Expect completion ~Mar 28."
