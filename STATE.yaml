@@ -1,51 +1,46 @@
 project: wosr
 goal: Parametric climate insurance pricing for WOSR emergence guarantees across Romania + 5 CEE countries (MD, PL, HU, CZ, SK) — ERA5-Land 36yr historical analysis, calibrated against Marsh Romania portfolio
 status: active
-last_save: "2026-03-27T06:00:00Z"
-last_state: "2026-03-26T12:00:00Z"
+last_save: "2026-03-27T14:30:00Z"
+last_state: "2026-03-27T06:35:00Z"
 session:
-  id: save-session-2026-03-27
+  id: save-session-2026-03-27b
   model: sonnet
   effort: medium
   tmux_window: wosr
   tmux_server: default
 what_changed: |
-  Session 2026-03-26 (context-compacted, recovered):
-  - Updated demo to multi-token access: 3 tokens (original, Horatiu, Matti)
-    - Original: TqH8k66T1hTUi4GT (Nils/Konstantin)
-    - Horatiu: Hr9mK3pLsQwX5nBv
-    - Matti: Mt7cJ2vRdYeZ4kAq
-  - Uploaded updated index.html to s3://wosr.demos.digifarm.tools/index.html
-  - CloudFront invalidation blocked (IAM lacks cloudfront:CreateInvalidation)
-  - Prepared Slack draft to Nils (demo links + methodology docs + GSheet ack + spring ETA)
-    — NOT SENT, awaiting Konstantin's confirmation
-  Session 2026-03-27:
-  - Spring peril jobs 1471424-1471429 still running (15h48m / 24h)
-  - Progress: RO/HU/MD/SK ~year 2008-2009, PL/CZ ~year 2010 (50-55% done)
-  - All 6 countries have 36/36 regular (non-spring) years complete in results/
-  - Conducted methodology validation: zero incorrect LR values; 4 flags for reinsurer delivery
-  - Built Excel in Horatiu/corn format (committed 0ef0809)
-current_task: "Spring peril HPC jobs running (round 3 of ~5-6) — ~50-55% done, wall-times ~2026-03-27 16:00 UTC"
+  Session 2026-03-27 (continued):
+  - Validated ERA5 model vs Marsh actual claims (2019-2024, 6 years from Horatiu's data)
+  - Key finding: ERA5 Full Package avg (13.50%) ≈ Marsh actual avg (14.3%) for 2019-2024
+  - ERA5 Standard avg (8.46%) undershoots — expected, covers drought only
+  - 2019 biggest gap: ERA5 Full 21.6% vs Marsh 30.0% — compound year, spring perils should close gap
+  - Confirmed: Marsh actuals include ALL perils (full crop cycle), not just autumn
+  - Implication: after spring perils added, CF may need recalibration downward to avoid overshooting
+  - Horatiu's "13-14%" expectation = 2019-2024 avg (includes 2019 disaster year at 30%)
+  - Corrected earlier error: the "13.1% ERA5 avg" quoted from V5 comparison was wrong
+  - Actual ERA5 2020-2023 avg: Standard 6.24%, Full 11.29% (not 13.1%)
+  - Could not access Nils's SUNROM methodology doc (1HWkK8WG9zXiTP0KDjHB5kIXuxDNqAeyx1gwIoRWaJLs) — Google auth wall
+current_task: "Spring peril HPC jobs running (round 3) — wall-times ~2026-03-27 16:00 UTC"
 next_steps:
-  - Resubmit spring peril jobs when wall-timed (ETA ~16:00 UTC today) — 1-2 more rounds
-  - Send Slack to Nils: demo links (Horatiu + Matti) + methodology docs + GSheet ack
-  - Fix validation FLAG 4: reconcile premium €7.56 computed vs €5.81 stated before reinsurer delivery
-  - Fix validation FLAG 3: document 6.1% LR = zone-weighted (Z1+Z2), not equal-weight
-  - Once spring perils complete: regenerate Full Package analysis/GSheet/Excel/dashboard
+  - Resubmit spring peril jobs when wall-timed (~16:00 UTC today) — 1-2 more rounds
+  - Once spring perils complete: recalibrate CF so Full Package aligns with Marsh 14.3% avg
+  - Regenerate Full Package analysis/GSheet/Excel/dashboard with spring perils
+  - Review Nils's SUNROM methodology doc (needs content pasted or exported)
+  - Send Slack to Nils (demo links + methodology docs) — draft still pending confirmation
   - Send Matti email (36yr all 6 countries + area pricing)
-  - Answer Nils re 3lc.ai meeting
 blocked_on: null
 needs_human: |
-  - Confirm Slack draft to Nils (demo links + docs) — draft ready, not sent
+  - Confirm Slack draft to Nils (demo links + docs)
+  - Nils's SUNROM doc needs to be pasted/exported for review
   - Nils asked about 3lc.ai meeting (Oct 2025) — Konstantin needs to answer
-  - Clarify premium calc: which LR_5yr/LR_35yr inputs produce €5.81/ha stated in methodology?
+  - After spring perils: decide on CF recalibration target
 files_touched:
   - STATE.yaml
-  - s3://wosr.demos.digifarm.tools/index.html (multi-token update)
 long_running:
   - type: hpc
     job_id: "1471424-1471429"
     cluster: betzy
     status: running
     submitted: "2026-03-26T00:20:00Z"
-    eta: "~50-55% done (RO/HU/MD/SK year ~2008-2009, PL/CZ ~2010). Wall-times ~16:00 UTC 2026-03-27. ~1-2 more rounds after. Expect completion ~Mar 28."
+    eta: "~55% done (year ~2008-2010 of 1990-2025). Wall-times ~16:00 UTC 2026-03-27. ~1-2 more rounds. Expect completion ~Mar 28."
