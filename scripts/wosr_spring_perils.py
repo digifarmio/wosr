@@ -278,21 +278,33 @@ def main():
     df_spring = pd.DataFrame(spring_results)
     df_merged = df_base.merge(df_spring, on="region_id", how="left")
 
-    # Recompute lr_full_pct with real peril values
+    # Add spring peril columns to the result
     spring_cols = ["lr_spring_frost_pct", "lr_hail_pct", "lr_storm_pct", "lr_spring_drought_pct"]
     for col in spring_cols:
         if col not in df_merged.columns:
             df_merged[col] = 0.0
         df_merged[col] = df_merged[col].fillna(0.0)
 
-    # Full Package = Standard + Winter + spring frost + hail + storm + spring drought
+    # Scale ERA5 spring frost so 35yr RO avg ≈ 1.5% (raw avg = 0.408%)
+    # This preserves the year-to-year and county-to-county signal shape
+    SPRING_FROST_SCALE = 3.678
+    df_merged["lr_spring_frost_scaled_pct"] = (
+        df_merged["lr_spring_frost_pct"] * SPRING_FROST_SCALE
+    ).round(2)
+
+    # Full Package = Standard + Winter + scaled spring frost + market loadings
+    # Hail (+0.75%), storm/lodging (+0.75%), spring drought (+2.0%) are flat
+    # market-rate loadings — ERA5 cannot reliably capture these sub-grid perils
+    MARKET_HAIL = 0.75
+    MARKET_STORM = 0.75
+    MARKET_SPRING_DROUGHT = 2.0
     df_merged["lr_full_pct"] = (
         df_merged["lr_standard_pct"]
         + df_merged["lr_winter_pct"]
-        + df_merged["lr_spring_frost_pct"]
-        + df_merged["lr_hail_pct"]
-        + df_merged["lr_storm_pct"]
-        + df_merged["lr_spring_drought_pct"]
+        + df_merged["lr_spring_frost_scaled_pct"]
+        + MARKET_HAIL
+        + MARKET_STORM
+        + MARKET_SPRING_DROUGHT
     ).round(2)
 
     df_merged.to_csv(result_path, index=False)
